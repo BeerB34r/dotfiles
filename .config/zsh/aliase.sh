@@ -1,7 +1,7 @@
 # Useful aliases
-alias prep='vim ~/dotfiles/codam/.zshrc'
-alias sauce='source ~/dotfiles/codam/.zshrc'
-alias vimprep='vim ~/dotfiles/codam/.vimrc'
+alias prep='nvim ~/dotfiles/.zshrc'
+alias sauce='source ~/dotfiles/.zshrc'
+alias vimprep='nvim ~/dotfiles/.vimrc'
 alias comp='cc -Wall -Wextra -Werror'
 alias nman='gnome-terminal -t  "The Readerrrrr" -- man'
 alias nuvim='gnome-terminal -t "The objectively best IDE" --geometry=84x76 -- vim'

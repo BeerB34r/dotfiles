@@ -1,1 +1,0 @@
-~/dotfiles/codam/startup.sh
