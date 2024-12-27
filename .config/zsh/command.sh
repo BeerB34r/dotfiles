@@ -24,7 +24,60 @@ clean_desktop(){
 	xargs -i% wmctrl -i -c %
 	unset TARGET
 }
-cook(){
-	prep
-	sauce
+goodbye(){
+    COUNT=$(( $(wmctrl -d | wc -l) - 2))
+    for i in $(seq $COUNT -1 0)
+    do
+	wmctrl -s $i
+	clean_desktop
+	sleep 1
+    done
+    gnome-session-quit --logout --no-prompt
+}
+
+move_to(){ wmctrl -r :ACTIVE: -t $1 }
+move_with() { wmctrl -r :ACTIVE: -t $1 && wmctrl -s $1 }
+get_utime() { cut -f 1 -d ' ' /proc/uptime }
+benchmark(){
+    start=$(get_utime)
+    sh -c "$1" 1>/dev/null 2>&1
+    end=$(get_utime)
+    difference=$((end - start))
+    actual_seconds=$(echo $difference | cut -f 1 -d '.')
+    fractions=$(echo $difference | cut -f 2 -d '.')
+    minutes=$(($actual_seconds / 60))
+    seconds=$(($actual_seconds % 60))
+    printf "%s m %s s %.6s μs" "$minutes" "$seconds" "${fractions:=0}"
+}
+getmakevar(){
+    grep -E "$1\s*=\s*" Makefile | sed 's/.*\t//'
+}
+
+rerun(){
+    ARGUMENTS=""
+    MAKEARGS=""
+    for argument in $@
+    do
+	if [ "$argument" = "-c" ]
+	then
+	    clear
+	elif [ "$(echo "$argument" | head -c 3)" = "-m=" ]
+	then
+	    MAKEARGS+="$(echo "$argument" | tail -c +4)"
+	else
+	    ARGUMENTS+="$argument "
+	fi
+    done
+    sh -c "make re $MAKEARGS"
+    sh -c "./$(getmakevar "NAME") $ARGUMENTS"
+    unset ARGUMENTS
+    unset MAKEARGS
+}
+
+mkdircd(){
+    if [ -n "$1" -a ! -d "$1" ]
+    then
+	mkdir -v $1
+    fi
+    \cd $1
 }
