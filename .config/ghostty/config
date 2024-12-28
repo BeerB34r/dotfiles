@@ -1,4 +1,4 @@
-font-family = "DepartureMono Nerd Font"
+#font-family = "DepartureMono Nerd Font"
 theme = "CyberpunkScarletProtocol"
 background-opacity = 0.7
 background-blur-radius = 20
