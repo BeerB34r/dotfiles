@@ -19,25 +19,4 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-require("lazy").setup({
-  spec = {
-    { "folke/tokyonight.nvim", config = function() vim.cmd.colorscheme "tokyonight" end },
-    { import = "config.plugins" }
-  }
-})
-
-require("tokyonight").setup({
-  -- use the night style
-  style = "night",
-  transparent = true,
-  -- disable italic for functions
-  styles = {
-    functions = {}
-  },
-  -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-  on_colors = function(colors)
-    colors.hint = colors.orange
-    colors.error = "#ff0000"
-  end
-})
-vim.cmd.colorscheme "tokyonight"
+require("lazy").setup({ spec = {{ import = "config.plugins" }}})
