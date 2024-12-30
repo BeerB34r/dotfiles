@@ -75,7 +75,7 @@ rerun(){
 }
 
 mkdircd(){
-    if [ -n "$1" -a ! -d "$1" ]
+    if [ -n "$1" -a ! -e "$1" ]
     then
 	mkdir -v $1
     fi

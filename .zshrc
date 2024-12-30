@@ -12,3 +12,6 @@ export PKG_CONFIG_PATH=$HOME/.local/lib64/pkgconfig:$HOME/.local/lib/pkgconfig${
 export MANPATH=$HOME/.local/man:$HOME/.local/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man${MANPATH:+:${MANPATH}}
 export ACLOCAL_PATH=$HOME/.local/share/aclocal${ACLOCAL_PATH:+:${ACLOCAL_PATH}}
 export CPATH=$HOME/.local/include${CPATH:+:${CPATH}}
+export PATH=$PATH:$HOME/.cargo/bin
+
+undecorate

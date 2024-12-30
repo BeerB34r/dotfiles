@@ -25,7 +25,7 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
 ~/log_login.sh
 ~/.startup.sh
 trap '~/log_logout.sh; exit 0' 0
