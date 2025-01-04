@@ -13,5 +13,3 @@ export MANPATH=$HOME/.local/man:$HOME/.local/share/man:/usr/local/man:/usr/local
 export ACLOCAL_PATH=$HOME/.local/share/aclocal${ACLOCAL_PATH:+:${ACLOCAL_PATH}}
 export CPATH=$HOME/.local/include${CPATH:+:${CPATH}}
 export PATH=$PATH:$HOME/.cargo/bin
-
-undecorate

@@ -1,4 +1,5 @@
 {
+  "codam-header.nvim": { "branch": "main", "commit": "eba4657860f4ac522afcc2a7189ba342d34a36ab" },
   "lazy.nvim": { "branch": "main", "commit": "7e6c863bc7563efbdd757a310d17ebc95166cef3" },
   "lazydev.nvim": { "branch": "main", "commit": "8620f82ee3f59ff2187647167b6b47387a13a018" },
   "mini.nvim": { "branch": "main", "commit": "2faada1cffce5609d78ac5e81eaf3754e0476758" },

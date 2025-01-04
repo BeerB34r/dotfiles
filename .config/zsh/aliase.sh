@@ -33,4 +33,4 @@ alias code='vim'
 alias low_skill='ls'
 feeling_lucky(){ if [[ $(($RANDOM % 1000)) == 0 ]]; then echo "lucky!" && ~/core/treachery/assorted/forkbomb.sh ; else echo "unlucky"; fi }
 alias ffmpreg='ffmpeg'
-alias undecorate='wmctrl -l | cut -f 1 -d " " | xargs -I{} xprop -id {} -format _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS 2'
+
