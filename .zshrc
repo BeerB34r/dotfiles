@@ -13,3 +13,4 @@ export MANPATH=$HOME/.local/man:$HOME/.local/share/man:/usr/local/man:/usr/local
 export ACLOCAL_PATH=$HOME/.local/share/aclocal${ACLOCAL_PATH:+:${ACLOCAL_PATH}}
 export CPATH=$HOME/.local/include${CPATH:+:${CPATH}}
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:/home/mde-beer/Downloads/lua-language-server-3.13.5-linux-x64/bin
