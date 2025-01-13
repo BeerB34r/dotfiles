@@ -10,10 +10,6 @@ vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space><space>r", "<cmd>source ~/.config/nvim/init.lua<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("v", "<space>x", ":lua<CR>")
---vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
---vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
---vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
---vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 -- base options
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4

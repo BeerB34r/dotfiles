@@ -50,7 +50,7 @@ benchmark(){
     printf "%s m %s s %.6s μs" "$minutes" "$seconds" "${fractions:=0}"
 }
 getmakevar(){
-    grep -E "$1\s*=\s*" Makefile | sed 's/.*\t//'
+    grep -E "$1\s*[=:]\s*" Makefile | sed 's/.*\t//'
 }
 
 rerun(){
