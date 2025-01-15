@@ -15,7 +15,8 @@ return {
 			vim.keymap.set("n", "<space>en", function()
 				require('telescope.builtin').find_files {
 					cwd = vim.fn.stdpath("config"),
-					follow = true
+					follow = true,
+					hidden = true
 				}
 			end)
 		end

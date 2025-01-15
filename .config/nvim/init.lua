@@ -25,6 +25,7 @@ vim.opt.listchars:append { tab = 'ᘳ-ᘰ', space = 'ᘯ', eol = 'ᘱ' }
 vim.opt.colorcolumn = '+1'
 vim.opt.wrap = false
 vim.opt.swapfile = false
+vim.g.c_syntax_for_h = true
 
 vim.opt.clipboard = "unnamedplus" -- paste-buffer == system clipboard
 
