@@ -7,9 +7,20 @@ return {
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 		},
 		config = function()
+			require('telescope').setup {
+				defaults = {
+					initial_mode = "normal",
+					winblend = 30,
+					file_ignore_patterns = {
+						".git/*",
+						"*.o"
+					}
+				}
+			}
 			vim.keymap.set("n", "<space>fd", function()
 				require('telescope.builtin').find_files {
-					follow = true
+					follow = true,
+					hidden = true
 				}
 			end)
 			vim.keymap.set("n", "<space>en", function()
