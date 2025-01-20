@@ -5,14 +5,14 @@ config:
   icon-position: "left" # show the icon to the "left" or "right" of the window name (defaults to left)
 
 icons:
-  zsh: "" # overwrite with your own symbol (Nerd Font icon, emoji, whatever!)
-  minishell: ""
+  zsh: "" # files i edit relatively often
   lua: ""
   c: ""
   cpp: ""
   md: "󰍔"
-  nvim: ""
+  nvim: "" # applications i use frequently
   ghostty: "󰊠"
-  philosophers: ""
+  philosophers: "" # codam projects
+  minishell: ""
   mandatory: ""
   bonus: ""
