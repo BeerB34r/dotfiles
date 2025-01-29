@@ -1,0 +1,25 @@
+#!/bin/sh
+
+session="dotfiles"
+cd ~/.dotfiles
+if [ ! -n "$(tmux list-sessions | grep ${session})" ]
+then
+	tmux new-session -d -s ${session}
+
+	tmux rename-window -t 0 nvim
+	tmux send-keys -t ${session}:"nvim" "cd .config/nvim" C-m "nvim init.lua" C-m
+	tmux split-window -t ${session}:"nvim" -h -c .config/nvim/lua/config
+	tmux new-window -t ${session}:1 -n tmux
+	tmux send-keys -t ${session}:"tmux" "nvim .tmux.conf" C-m
+	tmux split-window -t ${session}:"tmux" -h
+	tmux new-window -t ${session}:2 -n zsh
+	tmux send-keys -t ${session}:"zsh" "nvim .zshrc" C-m
+	tmux split-window -t ${session}:"zsh" -h -c .config/zsh
+	tmux new-window -t ${session}:3 -n ghostty
+	tmux send-keys -t ${session}:"ghostty" "cd .config/ghostty" C-m "nvim config" C-m
+	tmux split-window -t ${session}:"ghostty" -h -c .config/ghostty
+	tmux new-window -t ${session}:4 -n git
+	tmux send-keys -t ${session}:"git" "lazygit" C-m
+fi
+
+tmux attach-session -t ${session}:0
