@@ -14,3 +14,4 @@ export ACLOCAL_PATH=$HOME/.local/share/aclocal${ACLOCAL_PATH:+:${ACLOCAL_PATH}}
 export CPATH=$HOME/.local/include${CPATH:+:${CPATH}}
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:/home/mde-beer/Downloads/lua-language-server-3.13.5-linux-x64/bin
+source ~/.capt/root/usr/share/doc/fzf/examples/completion.zsh

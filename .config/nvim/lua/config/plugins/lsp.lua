@@ -32,6 +32,7 @@ return {
 		config = function()
 			require("lspconfig").lua_ls.setup {}
 			require("lspconfig").clangd.setup {}
+			vim.keymap.set( "n", "gre", vim.diagnostic.setloclist, {})
 		end,
 	}
 }

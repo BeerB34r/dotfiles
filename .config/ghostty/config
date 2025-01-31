@@ -4,4 +4,4 @@ background-opacity = 0.8
 background-blur-radius = 20
 window-decoration = false
 font-size = 10.5
-class = ghostty
+class = "ghostty"
