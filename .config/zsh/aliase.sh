@@ -34,7 +34,7 @@ alias gobtrix='~/Downloads/gobtrix.sh'
 alias fortune='fortune ~/Downloads/fortunes/'
 alias cowracle='fortune | cowsay'
 alias mrbreast='cat ~/.dotfiles/non-dotfiles/mrbeast | cowsay -W 90'
-alias code='vim'
+alias code='nvim'
 alias low_skill='ls'
 feeling_lucky(){ if [[ $(($RANDOM % 1000)) == 0 ]]; then echo "lucky!" && ~/core/treachery/assorted/forkbomb.sh ; else echo "unlucky"; fi }
 alias ffmpreg='ffmpeg'
