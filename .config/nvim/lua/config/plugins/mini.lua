@@ -9,10 +9,12 @@ return {
 			local completion = require 'mini.completion'
 			local statusline = require 'mini.statusline'
 			local hipatterns = require('mini.hipatterns')
+			local ai = require 'mini.ai'
 			icons.setup {}
 			git.setup {}
 			diff.setup {}
 			completion.setup {}
+			statusline.setup { use_icons = true }
 			hipatterns.setup({
 				highlighters = {
 					fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
@@ -24,7 +26,7 @@ return {
 					hex_color = hipatterns.gen_highlighter.hex_color(),
 				},
 			})
-			statusline.setup { use_icons = true }
+			ai.setup {}
 		end
 	}
 }
