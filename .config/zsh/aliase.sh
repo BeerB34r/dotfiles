@@ -18,7 +18,12 @@ alias gadd='git add'
 alias gadda='git add .'
 alias gull='git pull'
 alias gs='git status'
-gushto(){for word in ${@:2}; do git push -u $word $1; done };
+gushto(){
+	for word in ${@:2}
+	do
+		git push -u $word $1
+	done
+};
 alias gushtostd='gushto master origin github'
 
 # Useless aliases
