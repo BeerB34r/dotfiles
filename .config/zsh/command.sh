@@ -1,6 +1,11 @@
-compile(){ cc -Wall -Wextra -Werror -o $1 ${@:2} && ./$1}
-webrun(){ wget -qO ./temp $1; chmod +x ./temp ; gnome-terminal -- ./temp ; rm ./temp }
-n(){for i in $@; do $i &!; done};
+compile(){ cc -Wall -Wextra -Werror -o $1 ${@:2} && ./$1 ;}
+webrun(){ wget -qO ./temp $1; chmod +x ./temp ; gnome-terminal -- ./temp ; rm ./temp ;}
+n(){
+	for i in $@ 
+	do 
+		$i &
+	done
+}
 vide_tile(){
 	gnome-terminal -t "$1" --geometry=84x76+$((1109*$2))+0 -- vim .
 }
@@ -35,9 +40,9 @@ goodbye(){
     gnome-session-quit --logout --no-prompt
 }
 
-move_to(){ wmctrl -r :ACTIVE: -t $1 }
-move_with() { wmctrl -r :ACTIVE: -t $1 && wmctrl -s $1 }
-get_utime() { cut -f 1 -d ' ' /proc/uptime }
+move_to(){ wmctrl -r :ACTIVE: -t $1 ;}
+move_with() { wmctrl -r :ACTIVE: -t $1 && wmctrl -s $1 ;}
+get_utime() { cut -f 1 -d ' ' /proc/uptime ;}
 benchmark(){
     start=$(get_utime)
     sh -c "$1" 1>/dev/null 2>&1
