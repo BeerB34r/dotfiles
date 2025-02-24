@@ -12,10 +12,10 @@ return {
 					initial_mode = "normal",
 					winblend = 30,
 					file_ignore_patterns = {
-						"^.*/%.git/.*",
-						"^%./lib/.*",
-						"^%./bin/.*",
-						"^%./%.cache/.*",
+						"%.git/.*",
+						"lib/.*",
+						"bin/.*",
+						"%.cache/.*",
 						".*%.o"
 					}
 				}
