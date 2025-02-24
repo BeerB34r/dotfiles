@@ -18,5 +18,6 @@ opt.wrap = false
 opt.swapfile = false
 opt.mouse = {}
 g.c_syntax_for_h = true
+g.mapleader = "<space>"
 
 opt.clipboard = "unnamedplus" -- paste-buffer == system clipboard

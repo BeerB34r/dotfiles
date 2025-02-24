@@ -3,13 +3,32 @@ return {
 	{
 		'echasnovski/mini.nvim',
 		config = function()
+			local clue = require 'mini.clue'
 			local icons = require 'mini.icons'
 			local git = require 'mini.git'
 			local diff = require 'mini.diff'
 			local completion = require 'mini.completion'
 			local statusline = require 'mini.statusline'
-			local hipatterns = require('mini.hipatterns')
+			local hipatterns = require 'mini.hipatterns'
 			local ai = require 'mini.ai'
+			clue.setup({
+				triggers = {
+					{ mode = 'n', keys = "<leader>" },
+					{ mode = 'n', keys = "g" },
+					{ mode = 'n', keys = "z" },
+				},
+				clues = {
+					clue.gen_clues.builtin_completion(),
+					clue.gen_clues.g(),
+					clue.gen_clues.marks(),
+					clue.gen_clues.registers(),
+					clue.gen_clues.windows(),
+					clue.gen_clues.z(),
+				},
+				window = {
+					delay = 500,
+				},
+			})
 			icons.setup {}
 			git.setup {}
 			diff.setup {}

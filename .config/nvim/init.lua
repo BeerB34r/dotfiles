@@ -3,10 +3,9 @@
 -- brazil mentioned btw
 
 -- requirements
-require("config.lazy")
 require("config.keymaps")
 require("config.options")
-
+require("config.lazy")
 -- autocmds
 vim.api.nvim_create_autocmd('TextYankPost', {
 	desc = 'Highlight when yanking text',
@@ -16,5 +15,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	end,
 })
 
-vim.api.nvim_create_user_command( "Norminette", '!norminette %', {})
-vim.api.nvim_create_user_command( "W", "w|Norminette", {})
+vim.api.nvim_create_user_command( "Norminette", '!norminette %', { desc = "run norminette on current file" })
+vim.api.nvim_create_user_command( "W", "w|Norminette", { desc = "write file, then run Norminette" })

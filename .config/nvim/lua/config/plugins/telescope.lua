@@ -25,14 +25,14 @@ return {
 					follow = true,
 					hidden = true
 				}
-			end)
+			end, { desc = "telescope find files" })
 			vim.keymap.set("n", "<space>en", function()
 				require('telescope.builtin').find_files {
 					cwd = vim.fn.stdpath("config"),
 					follow = true,
 					hidden = true
 				}
-			end)
+			end, { desc = "telescope edit neovim" })
 		end
 	}
 }
