@@ -1,34 +1,11 @@
 -- i use neovim btw
--- i run arch btw (a lie)
+-- i run arch btw
 -- brazil mentioned btw
 
 -- requirements
 require("config.lazy")
-
--- keymaps
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
-vim.keymap.set("n", "<space><space>r", "<cmd>source ~/.config/nvim/init.lua<CR>")
-vim.keymap.set("n", "<space>x", ":.lua<CR>")
-vim.keymap.set("v", "<space>x", ":lua<CR>")
--- base options
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.textwidth = 80
-vim.opt.showcmd = true
-vim.opt.showmatch = true
-vim.opt.smartindent = true
-vim.opt.autoindent = true
-vim.opt.list = true
-vim.opt.listchars:append { tab = 'ᘳ-ᘰ', space = 'ᘯ', eol = 'ᘱ' }
-vim.opt.colorcolumn = '+1'
-vim.opt.wrap = false
-vim.opt.swapfile = false
-vim.opt.mouse = {}
-vim.g.c_syntax_for_h = true
-
-vim.opt.clipboard = "unnamedplus" -- paste-buffer == system clipboard
+require("config.keymaps")
+require("config.options")
 
 -- autocmds
 vim.api.nvim_create_autocmd('TextYankPost', {
