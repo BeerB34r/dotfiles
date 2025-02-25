@@ -48,6 +48,7 @@ return {
 			})
 			ai.setup {}
 			notify.setup {}
+			vim.notify = notify.make_notify()
 		end
 	}
 }
