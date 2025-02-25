@@ -11,6 +11,7 @@ return {
 			local statusline = require 'mini.statusline'
 			local hipatterns = require 'mini.hipatterns'
 			local ai = require 'mini.ai'
+			local notify = require 'mini.notify'
 			clue.setup({
 				triggers = {
 					{ mode = 'n', keys = "<leader>" },
@@ -46,6 +47,7 @@ return {
 				},
 			})
 			ai.setup {}
+			notify.setup {}
 		end
 	}
 }

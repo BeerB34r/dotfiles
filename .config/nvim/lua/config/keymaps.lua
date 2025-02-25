@@ -4,6 +4,7 @@ map("n", "<space><space>x", "<cmd>source %<CR>")
 map("n", "<space><space>r", "<cmd>source ~/.config/nvim/init.lua<CR>")
 map("n", "<space>x", ":.lua<CR>")
 map("v", "<space>x", ":lua<CR>")
+-- hjkl supremacy
 map("n", "<left>", ":echoe 'hjkl supremacy'<CR>")
 map("n", "<right>", ":echoe 'hjkl supremacy'<CR>")
 map("n", "<up>", ":echoe 'hjkl supremacy'<CR>")
