@@ -16,23 +16,32 @@ return {
 						"lib/.*",
 						"bin/.*",
 						"%.cache/.*",
-						".*%.o"
+						".*%.o",
 					}
 				}
 			}
 			vim.keymap.set("n", "<space>fd", function()
 				require('telescope.builtin').find_files {
 					follow = true,
-					hidden = true
+					hidden = true,
 				}
 			end, { desc = "telescope find files" })
 			vim.keymap.set("n", "<space>en", function()
 				require('telescope.builtin').find_files {
 					cwd = vim.fn.stdpath("config"),
 					follow = true,
-					hidden = true
+					hidden = true,
 				}
 			end, { desc = "telescope edit neovim" })
+			vim.keymap.set("n", "<space>fg", function()
+				require('telescope.builtin').live_grep {
+					follow = true,
+					hidden = true,
+					search_dirs = {
+						"%.",
+					}
+				}
+			end, { desc = "telescope live grep"})
 		end
 	}
 }
