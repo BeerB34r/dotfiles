@@ -17,7 +17,8 @@ return {
 						"bin/.*",
 						"%.cache/.*",
 						".*%.o",
-					}
+					},
+					layout_strategy = 'flex'
 				}
 			}
 			vim.keymap.set("n", "<leader>fd", function()

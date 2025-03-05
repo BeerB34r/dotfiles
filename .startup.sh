@@ -5,3 +5,4 @@ slack &!
 discord &!
 # ssh and profile pic
 cp -f ~/Downloads/profile.png ~/.face
+setxkbmap -option caps:escape
