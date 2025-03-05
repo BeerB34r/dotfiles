@@ -13,8 +13,8 @@ return {
 					winblend = 30,
 					file_ignore_patterns = {
 						"%.git/.*",
-						"lib/.*",
-						"bin/.*",
+						"^lib/.*",
+						"^bin/.*",
 						"%.cache/.*",
 						".*%.o",
 					},
