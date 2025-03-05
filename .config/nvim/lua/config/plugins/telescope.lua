@@ -20,26 +20,24 @@ return {
 					}
 				}
 			}
-			vim.keymap.set("n", "<space>fd", function()
+			vim.keymap.set("n", "<leader>fd", function()
 				require('telescope.builtin').find_files {
 					follow = true,
 					hidden = true,
 				}
 			end, { desc = "telescope find files" })
-			vim.keymap.set("n", "<space>en", function()
+			vim.keymap.set("n", "<leader>en", function()
 				require('telescope.builtin').find_files {
 					cwd = vim.fn.stdpath("config"),
 					follow = true,
 					hidden = true,
 				}
 			end, { desc = "telescope edit neovim" })
-			vim.keymap.set("n", "<space>fg", function()
+			vim.keymap.set("n", "<leader>fg", function()
 				require('telescope.builtin').live_grep {
 					follow = true,
 					hidden = true,
-					search_dirs = {
-						"%.",
-					}
+					initial_mode = "insert",
 				}
 			end, { desc = "telescope live grep"})
 		end

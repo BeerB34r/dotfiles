@@ -12,11 +12,13 @@ return {
 			local hipatterns = require 'mini.hipatterns'
 			local ai = require 'mini.ai'
 			local notify = require 'mini.notify'
+
 			clue.setup({
 				triggers = {
 					{ mode = 'n', keys = "<leader>" },
 					{ mode = 'n', keys = "g" },
 					{ mode = 'n', keys = "z" },
+					{ mode = 'i', keys = "<C-x>" },
 				},
 				clues = {
 					clue.gen_clues.builtin_completion(),

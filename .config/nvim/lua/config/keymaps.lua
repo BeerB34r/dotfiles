@@ -1,9 +1,9 @@
 local map = vim.keymap.set
 
-map("n", "<space><space>x", "<cmd>source %<CR>", { desc = "source current file" })
-map("n", "<space><space>r", "<cmd>source ~/.config/nvim/init.lua<CR>", { desc = "reload init.lua" })
-map("n", "<space>x", ":.lua<CR>", { desc = "interpret and run current line as lua" })
-map("v", "<space>x", ":lua<CR>", { desc = "interpret and run current selection as lua" })
+map("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "source current file" })
+map("n", "<leader><leader>r", "<cmd>source ~/.config/nvim/init.lua<CR>", { desc = "reload init.lua" })
+map("n", "<leader>x", ":.lua<CR>", { desc = "interpret and run current line as lua" })
+map("v", "<leader>x", ":lua<CR>", { desc = "interpret and run current selection as lua" })
 -- hjkl supremacy
 map("n", "<left>", ":lua vim.notify('hjkl supremacy', vim.log.levels.ERROR)<CR>", { desc = "hjkl supremacy" })
 map("n", "<right>", ":lua vim.notify('hjkl supremacy', vim.log.levels.ERROR)<CR>", { desc = "hjkl supremacy" })
