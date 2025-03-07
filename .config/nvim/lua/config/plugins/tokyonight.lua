@@ -12,6 +12,10 @@ return {
       colors.hint = colors.orange
       colors.error = "#ff0000"
     end,
+		on_highlights = function(hl)
+			hl.LineNrAbove = hl.Statement
+			hl.LineNrBelow = hl.Statement
+		end,
   },
   config = function(_, opts)
     require("tokyonight").setup(opts)
