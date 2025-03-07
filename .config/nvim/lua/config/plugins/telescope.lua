@@ -18,7 +18,49 @@ return {
 						"%.cache/.*",
 						".*%.o",
 					},
-					layout_strategy = 'flex'
+					layout_strategy = 'flex',
+					mappings = {
+						n = {
+							["nf"] = function()
+								local entry = require('telescope.actions.state').get_selected_entry()
+								if not entry then
+									entry = { value = vim.notify(require('telescope.actions.state').get_current_line()) }
+								end
+								vim.ui.input({ prompt = "please enter file name: ", default = entry.value }, function(input)
+									if input and input ~= "" then
+										local prompt = vim.fn.expand('%:p:h') .. '/' .. input
+										local success, _ = pcall(function()
+											vim.fn.mkdir(vim.fn.expand('%:p:h'), 'p')
+											vim.fn.writefile({}, prompt)
+										end)
+										if success then
+											vim.notify("created " .. input)
+											vim.cmd("e! " .. prompt)
+										else
+											vim.notify("failed to create file")
+										end
+									else
+										vim.notify("canceled")
+									end
+								end)
+							end,
+							["df"] = function()
+								local entry = require('telescope.actions.state').get_selected_entry()
+								if entry then
+									vim.ui.input({ prompt = "delete " .. entry.value .. "? ", default = "" }, function(input)
+										if input == "y" then
+											vim.fs.rm(vim.fn.expand('%:p:h') .. '/' .. entry.value)
+											vim.notify(entry.value .. " deleted")
+										else
+											vim.notify("canceled")
+										end
+									end)
+									else
+										vim.notify("deletion requires file", vim.log.levels.WARN)
+								end
+							end
+						}
+					}
 				}
 			}
 			vim.keymap.set("n", "<leader>fd", function()
@@ -41,6 +83,6 @@ return {
 					initial_mode = "insert",
 				}
 			end, { desc = "telescope live grep"})
-		end
+		end,
 	}
 }
