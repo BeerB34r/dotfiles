@@ -86,3 +86,14 @@ mkdircd(){
     fi
     \cd $1
 }
+
+norm(){
+	files=`norminette $@ | grep 'Error!' | cut -f 1 -d ':' | tr '\n' ' '`
+	norminette `echo $files`
+	echo 'open files?'
+	read response
+	if [ response != "n" ]
+	then
+		nvim `echo $files`
+	fi
+}

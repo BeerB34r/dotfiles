@@ -13,8 +13,8 @@ return {
       colors.error = "#ff0000"
     end,
 		on_highlights = function(hl)
-			hl.LineNrAbove = hl.Statement
-			hl.LineNrBelow = hl.Statement
+			hl.LineNrAbove = hl.FoldColumn
+			hl.LineNrBelow = hl.FoldColumn
 		end,
   },
   config = function(_, opts)
