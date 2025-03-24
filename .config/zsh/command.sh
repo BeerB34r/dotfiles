@@ -92,7 +92,7 @@ norm(){
 	norminette `echo $files`
 	echo 'open files?'
 	read response
-	if [ response != "n" ]
+	if [ $response != "n" ]
 	then
 		nvim `echo $files`
 	fi
