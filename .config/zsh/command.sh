@@ -89,8 +89,14 @@ mkdircd(){
 
 norm(){
 	files=`norminette $@ | grep 'Error!' | cut -f 1 -d ':' | tr '\n' ' '`
+	if [ ! $files ]
+	then
+		echo 'all files pass'
+		return
+	fi
 	norminette `echo $files`
 	echo 'open files?'
+	echo "$files"
 	read response
 	if [ $response != "n" ]
 	then
