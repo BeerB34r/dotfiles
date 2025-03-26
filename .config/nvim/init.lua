@@ -1,5 +1,5 @@
 -- i use neovim btw
--- i run arch btw
+-- i use arch btw
 -- brazil mentioned btw
 
 -- requirements
