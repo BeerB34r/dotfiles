@@ -7,11 +7,11 @@ return {
 			local icons = require 'mini.icons'
 			local git = require 'mini.git'
 			local diff = require 'mini.diff'
-			local completion = require 'mini.completion'
 			local statusline = require 'mini.statusline'
 			local hipatterns = require 'mini.hipatterns'
 			local ai = require 'mini.ai'
 			local notify = require 'mini.notify'
+			local surround = require 'mini.surround'
 
 			clue.setup({
 				triggers = {
@@ -35,7 +35,6 @@ return {
 			icons.setup {}
 			git.setup {}
 			diff.setup {}
-			completion.setup {}
 			statusline.setup { use_icons = true }
 			hipatterns.setup({
 				highlighters = {
@@ -51,6 +50,7 @@ return {
 			ai.setup {}
 			notify.setup {}
 			vim.notify = notify.make_notify()
+			surround.setup {}
 		end
 	}
 }

@@ -9,7 +9,7 @@ return {
 		config = function()
 			require('telescope').setup {
 				defaults = {
-					initial_mode = "normal",
+					initial_mode = "insert",
 					winblend = 30,
 					file_ignore_patterns = {
 						"%.git/.*",
