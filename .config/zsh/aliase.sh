@@ -39,3 +39,4 @@ alias low_skill='ls'
 feeling_lucky(){ if [[ $(($RANDOM % 1000)) == 0 ]]; then echo "lucky!" && ~/core/treachery/assorted/forkbomb.sh ; else echo "unlucky"; fi }
 alias ffmpreg='ffmpeg'
 alias rcedit='for i in ~/.zshrc ~/.bashrc ~/.config/fish/config.fish ; do nvim $i ; done'
+alias vim='nvim'
