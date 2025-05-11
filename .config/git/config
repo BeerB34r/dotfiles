@@ -1,0 +1,25 @@
+[user]
+	name = Mats de Beer
+	email = matsdebeerk@gmail.com
+[core]
+	compression = 9
+	whitespace = error
+	preloadindex = true
+	editor = nvim
+[color]
+	ui = auto
+[init]
+	defaultBranch = main
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = true
+[diff]
+	renames = copies
+	interHunkContext = 10
+
+# URLS
+[url "git@github.com:BeerB34r/"]
+	insteadOf = "bb:"
+[url "git@github.com:"]
+	insteadOf = "gh:"
