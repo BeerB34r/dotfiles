@@ -13,8 +13,8 @@ return {
 					winblend = 30,
 					file_ignore_patterns = {
 						"%.git/.*",
-						"^lib/.*",
-						"^bin/.*",
+						"^%./lib/.*",
+						"^%./bin/.*",
 						"%.cache/.*",
 						".*%.o",
 					},
@@ -48,7 +48,7 @@ return {
 								local entry = require('telescope.actions.state').get_selected_entry()
 								if entry then
 									vim.ui.input({ prompt = "delete " .. entry.value .. "? ", default = "" }, function(input)
-										if input == "y" then
+										if input == "y" or input == "yes" or input == "Y" or input == "YES" or input == "Yes" then
 											vim.fs.rm(vim.fn.expand('%:p:h') .. '/' .. entry.value)
 											vim.notify(entry.value .. " deleted")
 										else
