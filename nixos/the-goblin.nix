@@ -24,4 +24,6 @@
 
 			# leisure
 			prismlauncher
-		]
+		];
+	};
+}
