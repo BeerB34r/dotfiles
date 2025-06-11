@@ -3,7 +3,7 @@
 {
 	imports = 
 	[
-		/etc/nixos/hardware-configuration.nix # hardware scan
+		./jason/hardware-configuration.nix # hardware scan
 		./the-goblin.nix # main user config
 	];
 
