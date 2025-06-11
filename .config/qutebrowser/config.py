@@ -271,7 +271,7 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
                        'nix': 'https://search.nixos.org/packages?show={}'}
 c.url.start_pages = ['https://start.duckduckgo.com']
 c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_name']
-c.window.hide_decoration = True
+c.window.hide_decoration = False
 c.window.title_format = '{perc}{current_title}{title_sep}qutebrowser'
 c.window.transparent = False
 c.zoom.default = '100%'
