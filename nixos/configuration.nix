@@ -5,7 +5,7 @@
 	[
 		/etc/nixos/hardware-configuration.nix # hardware scan
 		./the-goblin.nix # main user config
-	]
+	];
 
 # Bootloader
 	boot.loader.systemd-boot.enable = true;
@@ -51,7 +51,7 @@
 		"nix-command"
 		"flakes"
 	];
-	system.stateVersion = "25.05"
+	system.stateVersion = "25.05";
 
 # packages
 	programs.steam.enable = true;
