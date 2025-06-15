@@ -35,7 +35,7 @@ c.completion.show = 'always'
 c.completion.shrink = False
 c.completion.timestamp_format = '%Y-%m-%d %H:%M'
 c.completion.use_best_match = False
-c.completion.web_history.exclude = ['rule34.xxx']
+c.completion.web_history.exclude = ['discord.com', 'youtube.com', 'rule34.xxx']
 c.completion.web_history.max_items = -1
 c.confirm_quit = ['never']
 c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt', 'https://easylist.to/easylist/easyprivacy.txt']
@@ -116,8 +116,8 @@ c.downloads.remove_finished = -1
 c.editor.command = ['nvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
 c.editor.encoding = 'utf-8'
 c.editor.remove_file = True
-c.fileselect.folder.command = ['xterm', '-e', 'ranger', '--choosedir={}']
-c.fileselect.single_file.command = ['xterm', '-e', 'ranger', '--choosefile={}']
+c.fileselect.folder.command = ['ghostty', '-e', 'dolphin', '--select {}']
+c.fileselect.single_file.command = ['ghostty', '-e', 'dolphin', '--select {}']
 c.fonts.completion.category = 'bold default_size default_family'
 c.fonts.completion.entry = 'default_size default_family'
 c.fonts.contextmenu = None
@@ -262,13 +262,14 @@ c.tabs.wrap = True
 c.url.auto_search = 'naive'
 c.url.default_page = 'https://start.duckduckgo.com/'
 c.url.incdec_segments = ['path', 'query']
-c.url.open_base_url = False
+c.url.open_base_url = True
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
                        'ddg': 'https://duckduckgo.com/?q={}',
                        'g': 'https://google.com/search?q={}',
                        'w': 'https://en.wikipedia.org/w/index.php?search={}',
                        'wd': 'https://en.wiktionary.org/w/index.php?search={}',
-                       'nix': 'https://search.nixos.org/packages?show={}'}
+                       'nix': 'https://search.nixos.org/packages?show={}',
+                       'y': 'https://youtube.com/search?q={}',}
 c.url.start_pages = ['https://start.duckduckgo.com']
 c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_name']
 c.window.hide_decoration = False
