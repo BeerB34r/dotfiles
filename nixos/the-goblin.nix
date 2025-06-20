@@ -21,6 +21,7 @@
 			# messaging
 			discord
 			slack
+			aerc
 
 			# leisure
 			prismlauncher
