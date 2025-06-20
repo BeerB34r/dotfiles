@@ -21,9 +21,11 @@
 			# messaging
 			discord
 			slack
+			neomutt
 
 			# leisure
 			prismlauncher
+			ani-cli
 		];
 	};
 }
