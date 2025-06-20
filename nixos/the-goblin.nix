@@ -21,7 +21,6 @@
 			# messaging
 			discord
 			slack
-			neomutt
 
 			# leisure
 			prismlauncher
