@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-nixos-rebuild switch --flake /home/the-goblin/dotfiles/nixos/
+nixos-rebuild switch --flake /home/the-goblin/dotfiles/nixos/ --upgrade
