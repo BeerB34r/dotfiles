@@ -65,6 +65,7 @@
 		qutebrowser
 		unzip
 		python3
+		wine
 
 		# C stuff
 		gcc
