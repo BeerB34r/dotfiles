@@ -66,6 +66,7 @@
 		unzip
 		python3
 		wine
+		gimp
 
 		# C stuff
 		gcc
