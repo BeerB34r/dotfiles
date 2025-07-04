@@ -269,7 +269,9 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
                        'w': 'https://en.wikipedia.org/w/index.php?search={}',
                        'wd': 'https://en.wiktionary.org/w/index.php?search={}',
                        'nix': 'https://search.nixos.org/packages?show={}',
-                       'y': 'https://youtube.com/search?q={}',}
+                       'y': 'https://youtube.com/search?q={}',
+                       'scry': 'https://scryfall.com/search?q={}',
+                       }
 c.url.start_pages = ['https://start.duckduckgo.com']
 c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_name']
 c.window.hide_decoration = False
