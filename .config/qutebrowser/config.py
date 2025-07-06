@@ -196,7 +196,8 @@ c.new_instance_open_target = 'tab'
 c.new_instance_open_target_window = 'last-focused'
 c.prompt.filebrowser = True
 c.prompt.radius = 8
-c.qt.args = []
+c.qt.args = [ 'auto-accept-camera-and-microphone-capture',
+              'disable-features=PermissionElement']
 c.qt.chromium.experimental_web_platform_features = 'auto'
 c.qt.chromium.low_end_device_mode = 'auto'
 c.qt.chromium.process_model = 'process-per-site-instance'
@@ -594,3 +595,4 @@ config.bind('N', 'prompt-accept --save no', mode='yesno')
 config.bind('Y', 'prompt-accept --save yes', mode='yesno')
 config.bind('n', 'prompt-accept no', mode='yesno')
 config.bind('y', 'prompt-accept yes', mode='yesno')
+

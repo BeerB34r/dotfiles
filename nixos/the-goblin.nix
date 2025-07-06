@@ -25,6 +25,7 @@
 			# leisure
 			prismlauncher
 			ani-cli
+			cockatrice
 		];
 	};
 }
