@@ -68,9 +68,10 @@
 		wine
 		gimp
 
-		# C stuff
+		# programming tooling
+		nil # nix LS
 		gcc
-		clang-tools
+		clang-tools # properly wrapped clangd
 		clang
 		gdb
 		gnumake
