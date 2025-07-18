@@ -70,6 +70,7 @@
 
 		# C stuff
 		gcc
+		clang-tools
 		clang
 		gdb
 		gnumake
