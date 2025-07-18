@@ -70,11 +70,13 @@
 
 		# programming tooling
 		nil # nix LS
+		lua-language-server
 		gcc
 		clang-tools # properly wrapped clangd
 		clang
 		gdb
 		gnumake
+		cmake
 	];
 
 # non-nix packages with runtime dependencies need this

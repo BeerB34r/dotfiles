@@ -10,7 +10,6 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"lua_ls",
 				}
 			})
 		end
@@ -33,10 +32,11 @@ return {
 
 			lspconf.lua_ls.setup {}
 			lspconf.clangd.setup {}
+			lspconf.nil_ls.setup {}
 
 			require("lspconfig.configs").norm_ls = {
 				default_config = {
-					cmd = { "python3", "/home/mde-beer/languageservers/norm_ls.py" },
+					cmd = { vim.env.HOME .. "/languageservers/norm_ls" },
 					filetypes = { "c" },
 					single_file_support = true,
 					root_dir = function(fname)
