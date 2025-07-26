@@ -67,6 +67,7 @@
 		python3
 		wine
 		gimp
+		spotify-player
 
 		# programming tooling
 		nil # nix LS
