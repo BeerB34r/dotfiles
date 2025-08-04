@@ -272,6 +272,7 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
                        'nix': 'https://search.nixos.org/packages?show={}',
                        'y': 'https://youtube.com/search?q={}',
                        'scry': 'https://scryfall.com/search?q={}',
+                       'tr': 'https://translate.google.com/?sl=auto&tl=en&text={}&op=translate',
                        }
 c.url.start_pages = ['https://start.duckduckgo.com']
 c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_name']
