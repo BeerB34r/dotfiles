@@ -17,7 +17,9 @@ c.aliases = {'w': 'session-save',
              'q': 'close',
              'qa': 'quit',
              'wq': 'quit --save',
-             'wqa': 'quit --save'}
+             'wqa': 'quit --save',
+             'so': 'config-source',
+             }
 c.auto_save.interval = 15000
 c.auto_save.session = True
 c.backend = 'webengine'
@@ -236,7 +238,7 @@ c.tabs.favicons.show = 'always'
 c.tabs.focus_stack_size = 10
 c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
 c.tabs.indicator.width = 3
-c.tabs.last_close = 'ignore'
+c.tabs.last_close = 'close'
 c.tabs.max_width = -1
 c.tabs.min_width = -1
 c.tabs.mode_on_change = 'normal'
@@ -261,11 +263,12 @@ c.tabs.undo_stack_size = 100
 c.tabs.width = '15%'
 c.tabs.wrap = True
 c.url.auto_search = 'naive'
-c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'https://startpage.com/'
 c.url.incdec_segments = ['path', 'query']
 c.url.open_base_url = True
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
+c.url.searchengines = {'DEFAULT': 'https://startpage.com/search?query={}',
                        'ddg': 'https://duckduckgo.com/?q={}',
+                       's': 'https://startpage.com/search?query={}',
                        'g': 'https://google.com/search?q={}',
                        'w': 'https://en.wikipedia.org/w/index.php?search={}',
                        'wd': 'https://en.wiktionary.org/w/index.php?search={}',
@@ -273,8 +276,10 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
                        'y': 'https://youtube.com/search?q={}',
                        'scry': 'https://scryfall.com/search?q={}',
                        'tr': 'https://translate.google.com/?sl=auto&tl=en&text={}&op=translate',
+                       'ud': 'https://urbandictionary.com/define.php?term={}',
+                       'tp': 'https://linku.la/?q={}',
                        }
-c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ['https://startpage.com', 'https://discord.com/channels/@me']
 c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_name']
 c.window.hide_decoration = False
 c.window.title_format = '{perc}{current_title}{title_sep}qutebrowser'
