@@ -50,6 +50,8 @@
 			General = {
 				Experimental = true; # battery charge on bt devices
 			};
+		};
+	};
 
 # nix configs
 
