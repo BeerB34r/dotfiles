@@ -78,9 +78,9 @@
 		gimp
 		spotify-player
 		vlc
-		soundwireserver
 		paprefs
 		pavucontrol
+		tree
 
 		# programming tooling
 		nil # nix LS
