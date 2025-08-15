@@ -3,8 +3,8 @@
 -- brazil mentioned btw
 
 -- requirements
-require("config.keymaps")
 require("config.options")
+require("config.keymaps")
 require("config.lazy")
 -- autocmds
 vim.api.nvim_create_autocmd('TextYankPost', {
