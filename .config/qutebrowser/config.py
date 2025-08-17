@@ -280,6 +280,7 @@ c.url.searchengines = {'DEFAULT': 'https://startpage.com/search?query={}',
                        'tp': 'https://linku.la/?q={}',
                        'tb': 'https://thuisbezorgd.nl/en/delivery/food/amsterdam-1096?q={}',
                        'n': 'https://nebula.tv/search?q={}',
+                       'gh': 'https://github.com/search?q={}&type=repositories',
                        }
 c.url.start_pages = ['https://startpage.com', 'https://discord.com/channels/@me']
 c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_name']
