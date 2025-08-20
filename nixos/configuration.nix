@@ -75,8 +75,6 @@
 		unzip
 		python3
 		wine
-		gimp
-		spotify-player
 		vlc
 		paprefs
 		pavucontrol

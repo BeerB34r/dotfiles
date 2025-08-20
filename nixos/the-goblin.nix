@@ -17,6 +17,7 @@
 			fzf
 			lazygit
 			norminette
+			gimp
 
 			# messaging
 			discord
@@ -24,8 +25,10 @@
 
 			# leisure
 			prismlauncher
+			legendary-heroic
 			ani-cli
 			cockatrice
+			spotify-player
 		];
 	};
 }
