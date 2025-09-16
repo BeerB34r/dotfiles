@@ -82,8 +82,13 @@ c.content.local_content_can_access_file_urls = True
 c.content.local_content_can_access_remote_urls = False
 c.content.local_storage = True
 c.content.media.audio_capture = 'ask'
+config.set('content.media.audio_capture', True, 'discord.com')
 c.content.media.audio_video_capture = 'ask'
+config.set('content.media.audio_video_capture', True, 'discord.com')
 c.content.media.video_capture = 'ask'
+config.set('content.media.video_capture', True, 'discord.com')
+c.content.desktop_capture = 'ask'
+config.set('content.desktop_capture', True, 'discord.com')
 c.content.mouse_lock = 'ask'
 c.content.mute = False
 c.content.netrc_file = None
@@ -282,6 +287,7 @@ c.url.searchengines = {'DEFAULT': 'https://startpage.com/search?query={}',
                        'n': 'https://nebula.tv/search?q={}',
                        'gh': 'https://github.com/search?q={}&type=repositories',
                        'sv': 'https://stardewvalleywiki.com/mediawiki/index.php?search={}',
+                       'pv': 'https://primevideo.com/search/ref=atv_nb_sug?ie=UTF8&phrase={}',
                        }
 c.url.start_pages = ['https://startpage.com', 'https://discord.com/channels/@me']
 c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_name']
