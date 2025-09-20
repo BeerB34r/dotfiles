@@ -7,6 +7,7 @@ return {
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 		},
 		config = function()
+			local actions = require('telescope.actions')
 			require('telescope').setup {
 				defaults = {
 					initial_mode = "insert",
@@ -16,7 +17,7 @@ return {
 						"^%./lib/.*",
 						"^%./bin/.*",
 						"%.cache/.*",
-						".*%.o",
+						".*%.[od]",
 					},
 					layout_strategy = 'flex',
 					mappings = {
@@ -58,7 +59,7 @@ return {
 									else
 										vim.notify("deletion requires file", vim.log.levels.WARN)
 								end
-							end
+							end,
 						}
 					}
 				}

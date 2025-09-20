@@ -3,7 +3,7 @@
 	email = matsdebeerk@gmail.com
 [core]
 	compression = 9
-	whitespace = error
+	whitespace = trailing-space,space-before-tab,indent-with-non-tab,tabwidth=4
 	preloadindex = true
 	editor = nvim
 [color]
@@ -13,7 +13,7 @@
 [status]
 	branch = true
 	showStash = true
-	showUntrackedFiles = true
+	showUntrackedFiles = normal
 [diff]
 	renames = copies
 	interHunkContext = 10
