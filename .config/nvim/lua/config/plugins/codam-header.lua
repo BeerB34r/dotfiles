@@ -26,7 +26,4 @@ return {
 		},
 		exascii_left = true,
 	},
-	config = function (_, opts)
-		require("codamheader").setup(opts)
-	end,
 }

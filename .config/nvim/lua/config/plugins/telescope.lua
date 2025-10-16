@@ -7,7 +7,6 @@ return {
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 		},
 		config = function()
-			local actions = require('telescope.actions')
 			require('telescope').setup {
 				defaults = {
 					initial_mode = "insert",
@@ -68,6 +67,7 @@ return {
 				require('telescope.builtin').find_files {
 					follow = true,
 					hidden = true,
+					initial_mode = 'insert'
 				}
 			end, { desc = "telescope find files" })
 			vim.keymap.set("n", "<leader>en", function()
@@ -75,6 +75,7 @@ return {
 					cwd = vim.fn.stdpath("config"),
 					follow = true,
 					hidden = true,
+					initial_mode = 'insert',
 				}
 			end, { desc = "telescope edit neovim" })
 			vim.keymap.set("n", "<leader>fg", function()
