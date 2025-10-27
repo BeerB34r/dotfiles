@@ -11,6 +11,9 @@
 			modules = [
 				./configuration.nix
 				./jason/hardware-configuration.nix # hardware scan
+				({pkgs, ...}: {
+					networking.hostName = "jason";
+				})
 			];
 		};
 		nixosConfigurations.golden_fleece = nixpkgs.lib.nixosSystem {
@@ -18,6 +21,9 @@
 			modules = [
 				./configuration.nix
 				./golden_fleece/hardware-configuration.nix # hardware scan
+				({pkgs, ...}: {
+					networking.hostName = "golden_fleece";
+				})
 			];
 		};
 	};

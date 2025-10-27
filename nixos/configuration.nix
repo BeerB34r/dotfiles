@@ -3,7 +3,8 @@
 {
 	imports = 
 	[
-		./the-goblin.nix # main user config
+		./the-goblin.nix
+		./garnaal2000.nix
 	];
 
 # Bootloader
