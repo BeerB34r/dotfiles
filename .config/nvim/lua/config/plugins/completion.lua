@@ -5,6 +5,7 @@ return {
 			{ "rafamadriz/friendly-snippets", },
 			{ "L3MON4D3/luasnip",
 				build = "make install_jsregexp",
+				version = "v2.*",
 				config = function()
 					require("luasnip.loaders.from_vscode").lazy_load()
 					require("luasnip.loaders.from_lua").lazy_load({ paths = {"./lua/snippets"}})
@@ -34,9 +35,6 @@ return {
 				default = { 'lsp', 'path', 'snippets', 'buffer' },
 			},
 			fuzzy = { implementation = "prefer_rust_with_warning" },
-			signature = {
-				enable = true,
-			},
 		},
 		opts_extend = { 'sources.default' }
 	},
