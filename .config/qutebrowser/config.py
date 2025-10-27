@@ -288,6 +288,7 @@ c.url.searchengines = {'DEFAULT': 'https://startpage.com/search?query={}',
                        'gh': 'https://github.com/search?q={}&type=repositories',
                        'sv': 'https://stardewvalleywiki.com/mediawiki/index.php?search={}',
                        'pv': 'https://primevideo.com/search/ref=atv_nb_sug?ie=UTF8&phrase={}',
+                       'naob': 'https://naob.no/søk?q={}'
                        }
 c.url.start_pages = ['https://startpage.com', 'https://discord.com/channels/@me']
 c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_name']

@@ -6,3 +6,5 @@ source ~/.config/zsh/codam.sh
 if [ -e ~/.path.sh ]; then
 	source ~/.path.sh
 fi
+
+. "$HOME/.cargo/env"

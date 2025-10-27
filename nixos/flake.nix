@@ -10,6 +10,14 @@
 			specialArgs = {inherit inputs;};
 			modules = [
 				./configuration.nix
+				./jason/hardware-configuration.nix # hardware scan
+			];
+		};
+		nixosConfigurations.golden_fleece = nixpkgs.lib.nixosSystem {
+			specialArgs = {inherit inputs;};
+			modules = [
+				./configuration.nix
+				./golden_fleece/hardware-configuration.nix # hardware scan
 			];
 		};
 	};

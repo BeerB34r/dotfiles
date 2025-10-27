@@ -3,7 +3,6 @@
 {
 	imports = 
 	[
-		./jason/hardware-configuration.nix # hardware scan
 		./the-goblin.nix # main user config
 	];
 
@@ -12,7 +11,6 @@
 	boot.loader.efi.canTouchEfiVariables = true;
 	
 # Various system configurations
-	networking.hostName = "jason";
 	networking.networkmanager.enable = true;
 	time.timeZone = "Europe/Amsterdam";
 	i18n.defaultLocale = "en_US.UTF-8";
@@ -71,24 +69,14 @@
 		git
 		wget
 		ghostty
-		qutebrowser
 		unzip
 		python3
 		wine
 		vlc
+		mpv
 		paprefs
 		pavucontrol
 		tree
-
-		# programming tooling
-		nil # nix LS
-		lua-language-server
-		gcc
-		clang-tools # properly wrapped clangd
-		clang
-		gdb
-		gnumake
-		cmake
 	];
 
 # non-nix packages with runtime dependencies need this

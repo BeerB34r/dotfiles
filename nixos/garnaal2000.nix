@@ -1,10 +1,10 @@
 { lib, config, pkgs, ... }:
 
 {
-	users.users.the-goblin = {
+	users.users.garnaal2000 = {
 		shell = pkgs.zsh;
 		isNormalUser = true;
-		description = "Mats de Beer";
+		description = "Bente de Koning";
 		extraGroups = [ "networkmanager" "wheel" ];
 		packages = with pkgs; [
 			# day-to-day
@@ -18,7 +18,7 @@
 			lazygit
 			norminette
 			gimp
-			qutebrowser
+			firefox
 
 			# programming tooling
 			nil # nix_ls
@@ -35,11 +35,6 @@
 			slack
 
 			# leisure
-			prismlauncher
-			legendary-heroic
-			rare
-			ani-cli
-			cockatrice
 			spotify-player
 		];
 	};
