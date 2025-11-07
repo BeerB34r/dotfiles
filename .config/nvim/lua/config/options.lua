@@ -1,34 +1,34 @@
-local opt = vim.opt
+local o = vim.opt
 local g = vim.g
 
-opt.shiftwidth = 4
-opt.tabstop = 4
-opt.number = true
-opt.relativenumber = true
-opt.textwidth = 80
-opt.showcmd = true
-opt.showmatch = true
-opt.smartindent = true
-opt.autoindent = true
-opt.list = true
-opt.listchars:append { tab = 'ᘳ-ᘰ', space = 'ᘯ', eol = 'ᘱ' }
-opt.colorcolumn = '+1'
-opt.wrap = false
-opt.swapfile = false
-opt.mouse = {}
-opt.cursorline = true
-opt.cursorlineopt = "number"
-opt.incsearch = true
-opt.signcolumn = "yes"
-opt.foldenable = true
-opt.foldmethod = "expr"
-opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
-opt.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldclose:'
-opt.foldlevel = 99
-opt.foldlevelstart = 99
-opt.foldcolumn = '0'
+o.shiftwidth = 4
+o.tabstop = 4
+o.number = true
+o.relativenumber = true
+o.textwidth = 80
+o.showcmd = true
+o.showmatch = true
+o.smartindent = true
+o.autoindent = true
+o.list = true
+o.listchars:append { tab = 'ᘳ-ᘰ', space = 'ᘯ', eol = 'ᘱ' }
+o.colorcolumn = '+1'
+o.wrap = false
+o.swapfile = false
+o.mouse = {}
+o.cursorline = true
+o.cursorlineopt = "number"
+o.incsearch = true
+o.signcolumn = "yes"
+o.foldenable = true
+o.foldmethod = "expr"
+o.foldexpr = "v:lua.vim.lsp.foldexpr()"
+o.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldclose:'
+o.foldlevel = 99
+o.foldlevelstart = 99
+o.foldcolumn = '0'
 g.c_syntax_for_h = true
 g.mapleader = " "
 g.maplocalleader = "\\"
 
-opt.clipboard = "unnamedplus" -- paste-buffer == system clipboard
+o.clipboard = "unnamedplus" -- paste-buffer == system clipboard
