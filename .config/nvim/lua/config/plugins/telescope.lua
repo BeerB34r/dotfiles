@@ -3,11 +3,42 @@ return {
 		'nvim-telescope/telescope.nvim',
 		branch = 'master',
 		dependencies = {
-			'nvim-lua/plenary.nvim',
+			{ 'nvim-lua/plenary.nvim' },
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 		},
-		config = function()
-			require('telescope').setup {
+		opts = function()
+			local actions = require('telescope.actions')
+			local state = require('telescope.actions.state')
+
+			local new_file = function()
+				local entry = state.get_selected_entry() or { value = vim.notify(state.get_current_line()) }
+				vim.ui.input({ prompt = "please enter file name: ", default = entry.value }, function(input)
+					if not (input and input ~= "") then vim.notify("canceled") else
+						local prompt = vim.fn.expand('%:p:h') .. '/' .. input
+						local success, _ = pcall(function()
+							vim.fn.mkdir(vim.fn.expand('%:p:h'), 'p')
+							vim.fn.writefile({}, prompt)
+						end)
+						if not success then vim.notify("failed to create file") else
+							vim.notify("created " .. input)
+							vim.cmd("e! " .. prompt)
+						end
+					end
+				end)
+			end
+
+			local delete_file = function()
+				local entry = state.get_selected_entry()
+				if not entry then vim.notify("deletion requires file", vim.log.levels.WARN) else
+					vim.ui.input({ prompt = "delete " .. entry.value .. "? ", default = "" }, function(input)
+						if input == "y" or input == "yes" or input == "Y" or input == "YES" or input == "Yes" then
+							vim.fs.rm(vim.fn.expand('%:p:h') .. '/' .. entry.value)
+							vim.notify(entry.value .. " deleted")
+						else vim.notify("canceled") end
+					end)
+				end
+			end
+			return {
 				defaults = {
 					initial_mode = "insert",
 					winblend = 30,
@@ -21,70 +52,22 @@ return {
 					layout_strategy = 'flex',
 					mappings = {
 						n = {
-							["nf"] = function()
-								local entry = require('telescope.actions.state').get_selected_entry()
-								if not entry then
-									entry = { value = vim.notify(require('telescope.actions.state').get_current_line()) }
-								end
-								vim.ui.input({ prompt = "please enter file name: ", default = entry.value }, function(input)
-									if input and input ~= "" then
-										local prompt = vim.fn.expand('%:p:h') .. '/' .. input
-										local success, _ = pcall(function()
-											vim.fn.mkdir(vim.fn.expand('%:p:h'), 'p')
-											vim.fn.writefile({}, prompt)
-										end)
-										if success then
-											vim.notify("created " .. input)
-											vim.cmd("e! " .. prompt)
-										else
-											vim.notify("failed to create file")
-										end
-									else
-										vim.notify("canceled")
-									end
-								end)
-							end,
-							["df"] = function()
-								local entry = require('telescope.actions.state').get_selected_entry()
-								if entry then
-									vim.ui.input({ prompt = "delete " .. entry.value .. "? ", default = "" }, function(input)
-										if input == "y" or input == "yes" or input == "Y" or input == "YES" or input == "Yes" then
-											vim.fs.rm(vim.fn.expand('%:p:h') .. '/' .. entry.value)
-											vim.notify(entry.value .. " deleted")
-										else
-											vim.notify("canceled")
-										end
-									end)
-									else
-										vim.notify("deletion requires file", vim.log.levels.WARN)
-								end
-							end,
+							["nf"]	= new_file,
+							["df"]	= delete_file,
+							["q"]		= actions.close,
 						}
 					}
+				},
+				pickers = {
+					find_files = { follow = true, hidden = true, },
+					live_grep = { follow = true, hidden = true, initial_mode = 'insert', },
 				}
 			}
-			vim.keymap.set("n", "<leader>fd", function()
-				require('telescope.builtin').find_files {
-					follow = true,
-					hidden = true,
-					initial_mode = 'insert'
-				}
-			end, { desc = "telescope find files" })
-			vim.keymap.set("n", "<leader>en", function()
-				require('telescope.builtin').find_files {
-					cwd = vim.fn.stdpath("config"),
-					follow = true,
-					hidden = true,
-					initial_mode = 'insert',
-				}
-			end, { desc = "telescope edit neovim" })
-			vim.keymap.set("n", "<leader>fg", function()
-				require('telescope.builtin').live_grep {
-					follow = true,
-					hidden = true,
-					initial_mode = "insert",
-				}
-			end, { desc = "telescope live grep"})
 		end,
+		keys = {
+			{ "<leader>fd", desc = "Telescope find files", function() require('telescope.builtin').find_files() end, },
+			{ "<leader>en", desc = "Telescope edit neovim", function() require('telescope.builtin').find_files({ cwd = vim.fn.stdpath("config"), }) end, },
+			{ "<leader>fg", desc = "Telescope live grep", function() require('telescope.builtin').live_grep() end, },
+		},
 	}
 }

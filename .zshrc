@@ -7,4 +7,6 @@ if [ -e ~/.path.sh ]; then
 	source ~/.path.sh
 fi
 
-. "$HOME/.cargo/env"
+if [ -e ~/.cargo/env ]; then
+	. ~/.cargo/env
+fi
