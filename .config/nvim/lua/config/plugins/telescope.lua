@@ -40,6 +40,9 @@ return {
 			end
 			return {
 				defaults = {
+					preview = {
+						filesize_limit = 0.1 -- MB
+					},
 					initial_mode = "insert",
 					winblend = 30,
 					file_ignore_patterns = {
@@ -64,10 +67,14 @@ return {
 				}
 			}
 		end,
-		keys = {
-			{ "<leader>fd", desc = "Telescope find files", function() require('telescope.builtin').find_files() end, },
-			{ "<leader>en", desc = "Telescope edit neovim", function() require('telescope.builtin').find_files({ cwd = vim.fn.stdpath("config"), }) end, },
-			{ "<leader>fg", desc = "Telescope live grep", function() require('telescope.builtin').live_grep() end, },
-		},
+		keys = function()
+			local builtin = require('telescope.builtin')
+			return {
+				{ "<leader>fd", desc = "Telescope find files", builtin.find_files, },
+				{ "<leader>fs", desc = "Telescope find siblings", function() builtin.find_files({ cwd = vim.fn.expand('%:p:h') }) end, },
+				{ "<leader>en", desc = "Telescope edit neovim", function() builtin.find_files({ cwd = vim.fn.stdpath("config"), }) end, },
+				{ "<leader>fg", desc = "Telescope live grep", builtin.live_grep, },
+			}
+	end,
 	}
 }
