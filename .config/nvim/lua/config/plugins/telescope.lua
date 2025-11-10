@@ -31,7 +31,7 @@ return {
 				local entry = state.get_selected_entry()
 				if not entry then vim.notify("deletion requires file", vim.log.levels.WARN) else
 					vim.ui.input({ prompt = "delete " .. entry.value .. "? ", default = "" }, function(input)
-						if input == "y" or input == "yes" or input == "Y" or input == "YES" or input == "Yes" then
+						if input:lower():match("y") or input:lower():match("yes") then
 							vim.fs.rm(vim.fn.expand('%:p:h') .. '/' .. entry.value)
 							vim.notify(entry.value .. " deleted")
 						else vim.notify("canceled") end

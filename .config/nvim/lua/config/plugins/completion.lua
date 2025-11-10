@@ -13,7 +13,6 @@ return {
 			},
 		},
 		version = '1.*',
-
 		opts = {
 			snippets = { preset = 'luasnip' },
 			keymap = {
