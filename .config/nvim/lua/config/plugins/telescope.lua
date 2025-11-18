@@ -10,8 +10,8 @@ return {
 			local actions = require('telescope.actions')
 			local state = require('telescope.actions.state')
 
-			local new_file = function()
-				local entry = state.get_selected_entry() or { value = vim.notify(state.get_current_line()) }
+			local new_file = function(prompt_bufnr)
+				local entry = state.get_selected_entry() or { value = state.get_current_line() }
 				vim.ui.input({ prompt = "please enter file name: ", default = entry.value }, function(input)
 					if not (input and input ~= "") then vim.notify("canceled") else
 						local prompt = vim.fn.expand('%:p:h') .. '/' .. input
@@ -27,14 +27,31 @@ return {
 				end)
 			end
 
-			local delete_file = function()
+			local delete_file = function(prompt_bufnr)
+				local picker = state.get_current_picker(prompt_bufnr)
+				picker:delete_selection(function(value)
+					local file = value[1];
+					local ok, _ pcall(function() vim.fs.rm(file) end)
+					if ok then vim.notify("removed " .. file) else vim.notify("failed to remove " .. file) end
+					return ok
+				end)
+			end
+			local rename_file = function(prompt_bufnr)
 				local entry = state.get_selected_entry()
-				if not entry then vim.notify("deletion requires file", vim.log.levels.WARN) else
-					vim.ui.input({ prompt = "delete " .. entry.value .. "? ", default = "" }, function(input)
-						if input:lower():match("y") or input:lower():match("yes") then
-							vim.fs.rm(vim.fn.expand('%:p:h') .. '/' .. entry.value)
-							vim.notify(entry.value .. " deleted")
-						else vim.notify("canceled") end
+				if not entry then vim.notify("no file selected") else
+					vim.ui.input({ prompt = "rename file to: ", default = entry.value }, function(input)
+						if not input or input == "" then vim.notify("canceled") else
+							local success, _ = pcall(function() vim.fn.rename(entry.value, input) end)
+							if not success then vim.notify("failed to rename file") else
+								local picker = state.get_current_picker(prompt_bufnr)
+								for i, v in pairs(picker.finder.results) do if v[1] == entry.value then
+										picker.finder.results[i][1] = input
+										picker:refresh()
+								end end
+								local selection = picker:get_selection()
+								vim.notify("renamed file to " .. input)
+							end
+						end
 					end)
 				end
 			end
@@ -57,6 +74,7 @@ return {
 						n = {
 							["nf"]	= new_file,
 							["df"]	= delete_file,
+							["rf"]  = rename_file,
 							["q"]		= actions.close,
 						}
 					}
