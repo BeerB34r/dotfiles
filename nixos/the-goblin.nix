@@ -22,6 +22,7 @@
 
 			# programming tooling
 			nil # nix_ls
+			haskell-language-server
 			clang-tools # properly wrapped clangd
 			lua-language-server
 			gcc

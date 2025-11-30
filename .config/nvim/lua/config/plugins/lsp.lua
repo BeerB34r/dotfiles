@@ -22,6 +22,7 @@ return {
 						nil_ls = {}, -- nix
 						bashls = {}, -- sh/bash
 						norm_ls = {}, -- 42 norminette
+						hls = {},
 					},
 				},
 				config = function(_, opts)
