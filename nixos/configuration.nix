@@ -62,8 +62,8 @@
 	system.stateVersion = "25.05";
 
 # packages
-	programs.steam.enable = true;
 	programs.zsh.enable = true;
+	programs.steam.enable = true;
 	environment.systemPackages = with pkgs; [
 		# general stuff
 		neovim

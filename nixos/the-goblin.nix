@@ -36,7 +36,6 @@
 
 			# leisure
 			prismlauncher
-			legendary-heroic
 			rare
 			ani-cli
 			cockatrice

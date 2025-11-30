@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
+nix flake update
 nixos-rebuild switch --flake /home/the-goblin/dotfiles/nixos#$1 --upgrade-all
