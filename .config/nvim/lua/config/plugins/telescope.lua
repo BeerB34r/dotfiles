@@ -32,29 +32,30 @@ return {
 				picker:delete_selection(function(value)
 					local file = value[1];
 					local ok, _ pcall(function() vim.fs.rm(file) end)
-					if ok then vim.notify("removed " .. file) else vim.notify("failed to remove " .. file) end
+					if ok or ok == nil then vim.notify("removed " .. file) else vim.notify("failed to remove " .. file) end
 					return ok
 				end)
 			end
+
 			local rename_file = function(prompt_bufnr)
 				local entry = state.get_selected_entry()
 				if not entry then vim.notify("no file selected") else
 					vim.ui.input({ prompt = "rename file to: ", default = entry.value }, function(input)
 						if not input or input == "" then vim.notify("canceled") else
-							local success, _ = pcall(function() vim.fn.rename(entry.value, input) end)
-							if not success then vim.notify("failed to rename file") else
+							local ok, _ = pcall(function() vim.fn.rename(entry.value, input) end)
+							if not ok then vim.notify("failed to rename file") else
 								local picker = state.get_current_picker(prompt_bufnr)
 								for i, v in pairs(picker.finder.results) do if v[1] == entry.value then
 										picker.finder.results[i][1] = input
 										picker:refresh()
 								end end
-								local selection = picker:get_selection()
 								vim.notify("renamed file to " .. input)
 							end
 						end
 					end)
 				end
 			end
+
 			return {
 				defaults = {
 					preview = {
