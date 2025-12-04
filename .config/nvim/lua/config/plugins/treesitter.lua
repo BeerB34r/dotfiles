@@ -6,7 +6,7 @@ return {
 		build = ":TSUpdate",
 		config = function(opts)
 			local ts = require('nvim-treesitter')
-			local ensure_installed = { 'c', 'cpp', 'lua', 'markdown', 'markdown_inline', 'nix' }
+			local ensure_installed = { 'c', 'cpp', 'lua', 'markdown', 'markdown_inline', 'nix', 'haskell' }
 			ts.setup(opts)
 
 			for _,ft in ipairs(ensure_installed) do
