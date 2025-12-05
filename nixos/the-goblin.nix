@@ -25,6 +25,10 @@
 			haskell-language-server
 			clang-tools # properly wrapped clangd
 			lua-language-server
+			haskellPackages.ghc
+			haskellPackages.cabal-install
+			haskellPackages.cabal2nix
+			haskellPackages.hoogle
 			gcc
 			clang
 			gdb
