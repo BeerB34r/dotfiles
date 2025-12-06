@@ -45,6 +45,7 @@
 			ani-cli
 			cockatrice
 			spotify-player
+			lutris
 		];
 	};
 }
