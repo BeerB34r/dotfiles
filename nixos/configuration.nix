@@ -71,6 +71,7 @@
 		wget
 		ghostty
 		unzip
+		unrar
 		python3
 		wine
 		vlc
