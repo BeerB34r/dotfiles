@@ -23,6 +23,15 @@
 					({pkgs, ...}: { networking.hostName = "golden_fleece"; })
 				];
 			};
+			scrying-orb = nixpkgs.lib.nixosSystem {
+				specialArgs = {inherit inputs;};
+				modules = [
+					./configuration.nix
+					./scrying-orb/hardware-configuration.nix
+
+					({pkgs, ...}: { networking.hostName = "scrying-orb";})
+				];
+			};
 		};
 	};
 }

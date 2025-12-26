@@ -34,6 +34,7 @@
 			gdb
 			gnumake
 			cmake
+			bat
 
 			# messaging
 			discord
