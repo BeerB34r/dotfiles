@@ -19,6 +19,8 @@
 			norminette
 			gimp
 			qutebrowser
+			ripgrep
+			rPackages.googler
 
 			# programming tooling
 			nil # nix_ls
