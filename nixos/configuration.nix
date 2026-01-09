@@ -79,6 +79,7 @@
 		paprefs
 		pavucontrol
 		tree
+		bat
 	];
 
 # non-nix packages with runtime dependencies need this
