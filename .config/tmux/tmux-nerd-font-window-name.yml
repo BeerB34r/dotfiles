@@ -5,15 +5,16 @@ config:
   icon-position: "left" # show the icon to the "left" or "right" of the window name (defaults to left)
 
 icons:
-  zsh: "" # files i edit relatively often
+  zsh: "" # files i edit relatively often
   lua: ""
   c: ""
   cpp: ""
   md: "󰍔"
   nvim: "" # applications i use frequently
   ghostty: "󰊠"
-  philosophers: "" # codam projects
-  minishell: ""
   mandatory: ""
   bonus: ""
   debug: ""
+  host: ""
+  guest: ""
+  yazi: "󰇥"
