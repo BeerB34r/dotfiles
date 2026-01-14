@@ -40,3 +40,4 @@ feeling_lucky(){ if [[ $(($RANDOM % 1000)) == 0 ]]; then echo "lucky!" && ~/core
 alias ffmpreg='ffmpeg'
 alias rcedit='for i in ~/.zshrc ~/.bashrc ~/.config/fish/config.fish ; do nvim $i ; done'
 alias vim='nvim'
+alias cat=bat
