@@ -1,14 +1,13 @@
 # Useful aliases
 alias prep='nvim ~/.dotfiles/.zshrc'
-alias sauce='source ~/.dotfiles/.zshrc'
-alias vimprep='nvim ~/.dotfiles/.vimrc'
+alias sauce='source ~/.zshrc'
+alias vimprep='nvim ~/.vimrc'
 alias comp='cc -Wall -Wextra -Werror'
 alias nman='gnome-terminal -t  "The Readerrrrr" -- man'
 alias nuvim='gnome-terminal -t "The objectively best IDE" --geometry=84x76 -- vim'
 alias ls='ls -aF --group-directories-first --color=auto'
 alias term='gnome-terminal -t "Goblin time"'
 alias cls='clear && ls'
-alias rm='rm -d -v'
 alias cd='mkdircd'
 
 # The git aliases
@@ -41,3 +40,5 @@ alias ffmpreg='ffmpeg'
 alias rcedit='for i in ~/.zshrc ~/.bashrc ~/.config/fish/config.fish ; do nvim $i ; done'
 alias vim='nvim'
 alias cat=bat
+alias lg=lazygit
+alias ldo=lazydocker
