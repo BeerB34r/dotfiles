@@ -18,7 +18,10 @@ then
 	tmux new-window -t ${session}:3 -n ghostty
 	tmux send-keys -t ${session}:"ghostty" "cd .config/ghostty" C-m "nvim config" C-m
 	tmux split-window -t ${session}:"ghostty" -h -c .config/ghostty
-	tmux new-window -t ${session}:4 -n git
+	tmux new-window -t ${session}:4 -n yazi
+	tmux send-keys -t ${session}:"yazi" "cd .config/yazi" C-m "nvim yazi.toml" C-m
+	tmux split-window -t ${session}:"yazi" -h -c .config/yazi
+	tmux new-window -t ${session}:5 -n git
 	tmux send-keys -t ${session}:"git" "lazygit" C-m
 fi
 
