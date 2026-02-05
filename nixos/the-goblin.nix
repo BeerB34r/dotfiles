@@ -20,7 +20,7 @@
 			gimp
 			qutebrowser
 			ripgrep
-			rPackages.googler
+			yazi
 
 			# programming tooling
 			nil # nix_ls
