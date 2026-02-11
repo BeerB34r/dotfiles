@@ -20,6 +20,7 @@
 			gimp
 			qutebrowser
 			ripgrep
+			yq
 			yazi
 
 			# programming tooling
