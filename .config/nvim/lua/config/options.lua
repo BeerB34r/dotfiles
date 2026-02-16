@@ -32,3 +32,9 @@ g.mapleader = " "
 g.maplocalleader = "\\"
 
 o.clipboard = "unnamedplus" -- paste-buffer == system clipboard
+
+vim.filetype.add({
+	extension = {
+		tpp = "cpp",
+	},
+})
