@@ -1,5 +1,6 @@
 compile(){ cc -Wall -Wextra -Werror -o $1 ${@:2} && ./$1 ;}
 webrun(){ wget -qO ./temp $1; chmod +x ./temp ; gnome-terminal -- ./temp ; rm ./temp ;}
+has(){ which $@ >/dev/null 2>/dev/null ;}
 n(){
 	for i in $@ 
 	do 
@@ -103,10 +104,17 @@ norm(){
 		nvim `echo $files`
 	fi
 }
-y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
-}
+if has yazi; then
+	y() {
+		local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+		command yazi "$@" --cwd-file="$tmp"
+		IFS= read -r -d '' cwd < "$tmp"
+		[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+		rm -f -- "$tmp"
+	}
+fi
+if has hoogle; then
+	hoo() {
+		hoogle search -i $@
+	}
+fi
