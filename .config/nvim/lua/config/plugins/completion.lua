@@ -4,6 +4,7 @@ return {
 		dependencies = {
 			{ "rafamadriz/friendly-snippets", },
 			{ "L3MON4D3/luasnip",
+				dependencies = { "rafamadriz/friendly-snippets"},
 				build = "make install_jsregexp",
 				version = "v2.*",
 				config = function()
