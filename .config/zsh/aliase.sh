@@ -10,6 +10,7 @@ alias ls='ls -aF --group-directories-first --color=auto'
 alias term='gnome-terminal -t "Goblin time"'
 alias cls='clear && ls'
 alias cd='mkdircd'
+alias ..='cd ..'
 
 # The git aliases
 alias coomit='git commit -m'
@@ -19,18 +20,16 @@ alias gadda='git add .'
 alias gull='git pull'
 alias gs='git status'
 gushto(){
-	for word in ${@:2}
-	do
+	for word in ${@:2}; do
 		git push -u $word $1
 	done
 };
-alias gushtostd='gushto master origin github'
+alias gushtostd='gushto main origin github'
 
 # Useless aliases
 alias donut="gnome-terminal -t brainrot --zoom 0.3 --geometry=100,50 -- curl ascii.live/donut"
 alias parrot="gnome-terminal -t brainrot --zoom 0.3 --geometry=100,50 -- curl parrot.live"
 alias gobstream='while : ; do echo "$COL_FORE$((1 + $RANDOM % 256));$((1 + $RANDOM % 256));$((1 + $RANDOM % 256))mIt is goblin time$COL_CLEAR"; sleep 0.01; done'
-alias gobtrix='~/Downloads/gobtrix.sh'
 alias fortune='fortune ~/Downloads/fortunes/'
 alias cowracle='fortune | cowsay'
 alias mrbreast='cat ~/.dotfiles/non-dotfiles/mrbeast | cowsay -W 90'
@@ -40,6 +39,6 @@ feeling_lucky(){ if [[ $(($RANDOM % 1000)) == 0 ]]; then echo "lucky!" && ~/core
 alias ffmpreg='ffmpeg'
 alias rcedit='for i in ~/.zshrc ~/.bashrc ~/.config/fish/config.fish ; do nvim $i ; done'
 alias vim='nvim'
-alias cat=bat
-alias lg=lazygit
-alias ldo=lazydocker
+alias cat='bat'
+alias lg='lazygit'
+alias ldo='lazydocker'

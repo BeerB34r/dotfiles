@@ -1,28 +1,14 @@
 #!/usr/bin/env zsh
+has(){ which $@ >/dev/null 2>/dev/null ;}
 compile(){ cc -Wall -Wextra -Werror -o $1 ${@:2} && ./$1 ;}
 webrun(){ wget -qO ./temp $1; chmod +x ./temp ; gnome-terminal -- ./temp ; rm ./temp ;}
-has(){ which $@ >/dev/null 2>/dev/null ;}
 n(){
-	for i in $@ 
-	do 
+	for i in $@; do 
 		$i &
 	done
 }
-vide_tile(){
-	gnome-terminal -t "$1" --geometry=84x76+$((1109*$2))+0 -- vim .
-}
 minicurl(){
 	gnome-terminal -t 'brainrot' --zoom 0.3 --geometry=100,50 -- curl $@
-}
-vide(){
-	vide_tile "The objectively" 0
-	vide_tile "superior Integrated" 1
-	vide_tile "Development Environment" 2
-	gnome-terminal -t "Computer vision syndrome" --geometry=38x26+3327+0
-	minicurl ascii.live/donut
-	minicurl parrot.live
-	gnome-terminal -t "Windows:tm: file explorer" --geometry=38x27+3327+1400 -- zsh -c 'clear && ls && zsh -i'
-	exit
 }
 clean_desktop(){
 	TARGET=$1
@@ -33,11 +19,10 @@ clean_desktop(){
 }
 goodbye(){
     COUNT=$(( $(wmctrl -d | wc -l) - 2))
-    for i in $(seq $COUNT -1 0)
-    do
-	wmctrl -s $i
-	clean_desktop
-	sleep 1
+    for i in $(seq $COUNT -1 0); do
+		wmctrl -s $i
+		clean_desktop
+		sleep 1
     done
     gnome-session-quit --logout --no-prompt
 }
@@ -61,50 +46,44 @@ getmakevar(){
 }
 
 rerun(){
-    ARGUMENTS=""
-    MAKEARGS=""
-    for argument in $@
-    do
-	if [ "$argument" = "-c" ]
-	then
-	    clear
-	elif [ "$(echo "$argument" | head -c 3)" = "-m=" ]
-	then
-	    MAKEARGS+="$(echo "$argument" | tail -c +4)"
-	else
-	    ARGUMENTS+="$argument "
-	fi
+    local ARGUMENTS=""
+    local MAKEARGS=""
+    for argument in $@; do
+		if [ "$argument" = "-c" ]; then
+			clear
+		elif [ "$(echo "$argument" | head -c 3)" = "-m=" ]; then
+			MAKEARGS+="$(echo "$argument" | tail -c +4)"
+		else
+			ARGUMENTS+="$argument "
+		fi
     done
     sh -c "make re $MAKEARGS"
     sh -c "./$(getmakevar "NAME") $ARGUMENTS"
-    unset ARGUMENTS
-    unset MAKEARGS
 }
 
 mkdircd(){
-    if [ -n "$1" -a ! -e "$1" ]
-    then
-	mkdir -v $1
-    fi
+    if [ -n "$1" -a ! -e "$1" ]; then
+		mkdir -v $1
+	fi
     \cd $1
 }
 
-norm(){
-	files=`norminette $@ | grep 'Error!' | cut -f 1 -d ':' | tr '\n' ' '`
-	if [ ! $files ]
-	then
-		echo 'all files pass'
-		return
-	fi
-	norminette `echo $files`
-	echo 'open files?'
-	echo "$files"
-	read response
-	if [ $response != "n" ]
-	then
-		nvim `echo $files`
-	fi
-}
+if has norminette; then
+	norm(){
+		files=`norminette $@ | grep 'Error!' | cut -f 1 -d ':' | tr '\n' ' '`
+		if [ ! $files ]; then
+			echo 'all files pass'
+			return
+		fi
+		norminette `echo $files`
+		echo 'open files?'
+		echo "$files"
+		read response
+		if [ $response != "n" ]; then
+			nvim `echo $files`
+		fi
+	}
+fi
 if has yazi; then
 	y() {
 		local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
