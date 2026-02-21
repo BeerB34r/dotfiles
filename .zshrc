@@ -1,12 +1,22 @@
-source ~/.config/zsh/variable.sh
-source ~/.config/zsh/aliase.sh
-source ~/.config/zsh/command.sh
-source ~/.config/zsh/prompt.sh
-source ~/.config/zsh/codam.sh
-if [ -e ~/.path.sh ]; then
-	source ~/.path.sh
-fi
+#!/usr/bin/env zsh
 
-if [ -e ~/.cargo/env ]; then
-	. ~/.cargo/env
-fi
+warn() {
+	echo "[WARN]: $@" >&2
+}
+
+_sourceExisting() {
+	if [ -e "$1" ]; then
+		. "$1" || warn "failed to source $1"
+	elif [ "$2" = "warn" ]; then
+		echo "[WARN]: $1 doesnt exist" >&2
+	fi
+}
+
+_sourceExisting "${HOME}/.config/zsh/zsh.sh" warn
+_sourceExisting "${HOME}/.config/zsh/variable.sh" warn
+_sourceExisting "${HOME}/.config/zsh/aliase.sh" warn
+_sourceExisting "${HOME}/.config/zsh/command.sh" warn
+_sourceExisting "${HOME}/.config/zsh/prompt.sh" warn
+_sourceExisting "${HOME}/.config/zsh/codam.sh"
+_sourceExisting "${HOME}/.path.sh"
+_sourceExisting "${HOME}/.cargo/env"
