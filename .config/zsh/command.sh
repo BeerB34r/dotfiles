@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 compile(){ cc -Wall -Wextra -Werror -o $1 ${@:2} && ./$1 ;}
 webrun(){ wget -qO ./temp $1; chmod +x ./temp ; gnome-terminal -- ./temp ; rm ./temp ;}
 has(){ which $@ >/dev/null 2>/dev/null ;}
@@ -115,6 +116,6 @@ if has yazi; then
 fi
 if has hoogle; then
 	hoo() {
-		hoogle search -i $@
+		hoogle search -i $@ | bat
 	}
 fi

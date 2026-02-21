@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # Vim header email
 export MAIL="mde-beer@student.codam.nl"
 # scuffed ssh-key adding

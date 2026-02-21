@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # Useful aliases
 alias prep='nvim ~/.dotfiles/.zshrc'
 alias sauce='source ~/.zshrc'
