@@ -67,9 +67,9 @@
 	environment.systemPackages = with pkgs; [
 		# general stuff
 		neovim
+		ghostty
 		git
 		wget
-		ghostty
 		unzip
 		unrar
 		python3
