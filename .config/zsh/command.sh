@@ -84,17 +84,13 @@ if has norminette; then
 		fi
 	}
 fi
-if has yazi; then
-	y() {
-		local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-		command yazi "$@" --cwd-file="$tmp"
-		IFS= read -r -d '' cwd < "$tmp"
-		[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-		rm -f -- "$tmp"
-	}
-fi
-if has hoogle; then
-	hoo() {
-		hoogle search -i $@ | bat
-	}
-fi
+y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+hoo() {
+	hoogle search -i $@ | bat
+}
