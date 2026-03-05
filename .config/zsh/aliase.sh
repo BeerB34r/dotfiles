@@ -9,8 +9,8 @@ alias nuvim='gnome-terminal -t "The objectively best IDE" --geometry=84x76 -- vi
 alias ls='ls -aF --group-directories-first --color=auto'
 alias term='gnome-terminal -t "Goblin time"'
 alias cls='clear && ls'
-alias cd='mkdircd'
 alias ..='cd ..'
+alias rm='rm -vd'
 
 # The git aliases
 alias coomit='git commit -m'
