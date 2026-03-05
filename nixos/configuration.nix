@@ -80,6 +80,8 @@
 		pavucontrol
 		tree
 		bat
+		cargo
+		openssl
 	];
 
 # non-nix packages with runtime dependencies need this
