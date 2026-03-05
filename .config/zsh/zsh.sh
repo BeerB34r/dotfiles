@@ -30,9 +30,12 @@ if which fzf 2>/dev/null >/dev/null; then
 fi
 
 # keeb
-bindkey "^a" beginning-of-line
-bindkey "^e" end-of-line
-bindkey "^H" backward-kill-word
-bindkey "^J" history-search-forward
-bindkey "^K" history-search-backward
-bindkey "^R" fzf-history-widget
+
+setopt vi
+
+# bindkey "^a" beginning-of-line
+# bindkey "^e" end-of-line
+# bindkey "^H" backward-kill-word
+# bindkey "^J" history-search-forward
+# bindkey "^K" history-search-backward
+# bindkey "^R" fzf-history-widget
