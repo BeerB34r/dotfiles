@@ -25,7 +25,6 @@ setopt auto_param_slash # when dir completed, add / instead of trailing space
 setopt list_packed # different linewidths for completion
 setopt no_case_glob no_case_match # case insensitivity on cmp and globbing
 setopt globdots # dotfiles included in globs
-setopt extended_glob # more globbing! ~ # ^
 stty stop undef # wtf does ^s even do????
 
 # history
