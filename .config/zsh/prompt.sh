@@ -11,4 +11,5 @@ COL_PWD=$COL_PWD_FORE$COL_PWD_BACK
 GOB_PROMPT=$(echo $COL_GOB'goblin-%m'$COL_CLEAR) #%m => hostname
 GOB_TERM=$(echo $COL_TERM'\t%l'$COL_CLEAR)
 PWD_PROMPT=$(echo $COL_PWD'\t%~'$COL_CLEAR) #%~ => PWD
-PS1=$GOB_PROMPT$GOB_TERM$PWD_PROMPT$NEWLINE"%(?..$(echo -n "%{$COL_ERR%}")%? $(echo -n "%{$COL_CLEAR%}"))%# " #PS1 is weird and doesnt like newlines
+PWD_ERR=$(echo $COL_ERR'%? '$COL_CLEAR)
+PS1=$GOB_PROMPT$GOB_TERM$PWD_PROMPT$NEWLINE"%(?..$PWD_ERR)%# " #PS1 is weird and doesnt like newlines
