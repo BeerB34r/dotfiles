@@ -49,6 +49,7 @@
 			cockatrice
 			spotify-player
 			lutris
+			obs-studio
 		];
 	};
 }
