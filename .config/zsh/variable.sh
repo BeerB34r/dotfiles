@@ -6,4 +6,9 @@ COL_BACK=$ESC'48;2;'
 COL_CLEAR=$ESC'0m'
 NEWLINE=$'\n'
 COL_ERR=$ESC'1;31m'
-EDITOR="nvim"
+
+export EDITOR="nvim"
+if which bat 2>/dev/null >/dev/null; then
+	export PAGER='bat -l man -p'
+fi
+export MANPAGER="$PAGER"
