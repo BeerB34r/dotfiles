@@ -1,28 +1,4 @@
-local ls = require("luasnip")
-local lse = require("luasnip.extras")
-local lsef = require("luasnip.extras.fmt")
-
-local s = ls.snippet
-local sn = ls.snippet_node
-local t = ls.text_node
-local i = ls.insert_node
-local f = ls.function_node
-local c = ls.choice_node
-local d = ls.dynamic_node
-local r = ls.restore_node
-local l = lse.lambda
-local rep = lse.rep
-local p = lse.partial
-local m = lse.match
-local n = lse.nonempty
-local dl = lse.dynamic_lambda
-local fmt = lsef.fmt
-local fmta = lsef.fmta
-local types = require("luasnip.util.types")
-local conds = require("luasnip.extras.conditions")
-local conds_expand = require("luasnip.extras.conditions.expand")
-
-ls.add_snippets("cpp", {
+return {
 	s("ocf header", f(function(args, snip)
 		local res, env = {}, snip.env
 		local guard = env.TM_FILENAME:upper():gsub("%.", "_")
@@ -79,6 +55,4 @@ ls.add_snippets("cpp", {
 		nl("}")
 		return res
 	end))
-}, {
-	key = "all",
-})
+}
