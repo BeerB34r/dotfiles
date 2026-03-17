@@ -1,0 +1,6 @@
+theme: tokyo-night
+layout: vertical
+heading:
+   visible: true
+   show_host: true
+   show_version: true
