@@ -93,6 +93,8 @@ return {
 				{ "<leader>fs", desc = "Telescope find siblings", function() builtin.find_files({ cwd = vim.fn.expand('%:p:h') }) end, },
 				{ "<leader>en", desc = "Telescope edit neovim", function() builtin.find_files({ cwd = vim.fn.stdpath("config"), }) end, },
 				{ "<leader>ls", desc = "Telescope show workspace symbols", builtin.lsp_workspace_symbols },
+				{ "<leader>bb", desc = "Telescope list builtin pickers", builtin.builtin },
+				{ "<leader>ld", desc = "Telescope jump to definition", builtin.lsp_definitions },
 				{ "<leader>fg", desc = "Telescope live grep", builtin.live_grep, },
 			}
 	end,
