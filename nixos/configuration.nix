@@ -85,6 +85,7 @@
 		bat
 		cargo
 		openssl
+		impala # wifi TUI
 	];
 
 # non-nix packages with runtime dependencies need this
