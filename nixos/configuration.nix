@@ -3,8 +3,8 @@
 {
 	imports = 
 	[
-		./the-goblin.nix
-		./garnaal2000.nix
+		./users/the-goblin.nix
+		./users/garnaal2000.nix
 	];
 
 # Bootloader
@@ -13,10 +13,7 @@
 	boot.crashDump.enable = true; #pls prayge
 	
 # Various system configurations
-	networking.networkmanager = {
-		enable = true;
-		wifi.backend = "iwd";
-	};
+	networking.networkmanager.enable = true;
 	time.timeZone = "Europe/Amsterdam";
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
@@ -34,6 +31,7 @@
 # DE config
 	services.displayManager.sddm.enable = true;
 	services.desktopManager.plasma6.enable = true;
+	services.dunst.enable = true;
 	services.xserver.xkb = {
 		layout = "us";
 		variant = "";
@@ -87,7 +85,6 @@
 		bat
 		cargo
 		openssl
-		impala # wifi TUI
 		#hypr stuff
 		hyprlauncher
 		hyprpaper

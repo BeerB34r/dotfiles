@@ -23,19 +23,22 @@
 			yazi
 
 			# programming tooling
-			nil # nix_ls
-			haskell-language-server
-			clang-tools # properly wrapped clangd
-			lua-language-server
-			haskellPackages.ghc
-			haskellPackages.cabal-install
-			haskellPackages.cabal2nix
-			haskellPackages.hoogle
+			# # haskell
+			ghc
+			cabal-install
+			cabal2nix
+			hoogle
+			# # C/C++
 			gcc
 			clang
 			gdb
 			gnumake
 			cmake
+			# # lsp
+			nil # nix_ls
+			haskell-language-server
+			clang-tools # properly wrapped clangd
+			lua-language-server
 
 			# messaging
 			discord
