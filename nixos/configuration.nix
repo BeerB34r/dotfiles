@@ -14,6 +14,7 @@
 	
 # Various system configurations
 	networking.networkmanager.enable = true;
+	networking.wireless.iwd.enable = true;
 	time.timeZone = "Europe/Amsterdam";
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
@@ -84,7 +85,6 @@
 		bat
 		cargo
 		openssl
-		iwd
 		impala # wifi TUI
 		#hypr stuff
 		hyprlauncher
