@@ -70,7 +70,6 @@
 		# general stuff
 		neovim
 		ghostty
-		hyprlauncher
 		git
 		wget
 		unzip
@@ -86,6 +85,9 @@
 		cargo
 		openssl
 		impala # wifi TUI
+		#hypr stuff
+		hyprlauncher
+		hyprpaper
 	];
 
 # non-nix packages with runtime dependencies need this
