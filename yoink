@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+fatal() {
+	echo "[FATAL]" $@
+	exit 1
+}
+
+warn() {
+	echo "[WARN]" $@
+}
+
+_main() {
+	if [ -z $1 -o -z $2 ]; then
+		fatal "Neither argument can be empty";
+	fi
+	if [ ! -e $1 ]; then
+		fatal "Target must exist"
+	fi
+	mkdir -pv `dirname $2`
+	cp $1 $2
+	rm $1
+	ln -s $2 `realpath $1`
+	exit 0
+}
+
+_main $1 $2

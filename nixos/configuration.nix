@@ -70,7 +70,7 @@
 		# general stuff
 		neovim
 		ghostty
-		kitty # hyprland cuz i havent set it up for ghostty yet :skull:
+		hyprlauncher
 		git
 		wget
 		unzip
