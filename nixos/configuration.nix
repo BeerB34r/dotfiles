@@ -31,7 +31,6 @@
 # DE config
 	services.displayManager.sddm.enable = true;
 	services.desktopManager.plasma6.enable = true;
-	services.desktopManager.hyprland.enable = true;
 	services.xserver.xkb = {
 		layout = "us";
 		variant = "";
@@ -66,6 +65,7 @@
 # packages
 	programs.zsh.enable = true;
 	programs.steam.enable = true;
+	programs.hyprland.enable = true;
 	environment.systemPackages = with pkgs; [
 		# general stuff
 		neovim
