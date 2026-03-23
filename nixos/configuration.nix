@@ -31,6 +31,7 @@
 # DE config
 	services.displayManager.sddm.enable = true;
 	services.desktopManager.plasma6.enable = true;
+	services.desktopManager.hyprland.enable = true;
 	services.xserver.xkb = {
 		layout = "us";
 		variant = "";
@@ -69,6 +70,7 @@
 		# general stuff
 		neovim
 		ghostty
+		kitty # hyprland cuz i havent set it up for ghostty yet :skull:
 		git
 		wget
 		unzip

@@ -16,7 +16,6 @@
 			gh
 			fzf
 			lazygit
-			norminette
 			gimp
 			qutebrowser
 			ripgrep
