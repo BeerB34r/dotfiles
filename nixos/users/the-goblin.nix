@@ -27,7 +27,7 @@
 			ghc
 			cabal-install
 			cabal2nix
-			hoogle
+			haskellPackages.hoogle
 			# # C/C++
 			gcc
 			clang

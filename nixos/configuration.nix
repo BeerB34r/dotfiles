@@ -88,6 +88,7 @@
 		#hypr stuff
 		hyprlauncher
 		hyprpaper
+		hyprshot
 	];
 
 # non-nix packages with runtime dependencies need this
