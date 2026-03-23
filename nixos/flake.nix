@@ -11,7 +11,7 @@
 				specialArgs = {inherit inputs;};
 				modules = [
 					./configuration.nix
-					./jason/hardware-configuration.nix # hardware scan
+					./hosts/jason/hardware-configuration.nix # hardware scan
 					({pkgs, ...}: { networking.hostName = "jason"; })
 				];
 			};
@@ -19,7 +19,7 @@
 				specialArgs = {inherit inputs;};
 				modules = [
 					./configuration.nix
-					./golden_fleece/hardware-configuration.nix # hardware scan
+					./hosts/golden_fleece/hardware-configuration.nix # hardware scan
 					({pkgs, ...}: { networking.hostName = "golden_fleece"; })
 				];
 			};
@@ -27,7 +27,7 @@
 				specialArgs = {inherit inputs;};
 				modules = [
 					./configuration.nix
-					./scrying-orb/hardware-configuration.nix
+					./hosts/scrying-orb/hardware-configuration.nix
 
 					({pkgs, ...}: { networking.hostName = "scrying-orb";})
 				];
