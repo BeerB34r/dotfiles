@@ -84,6 +84,7 @@
 		bat
 		cargo
 		openssl
+		iwd
 		impala # wifi TUI
 		#hypr stuff
 		hyprlauncher

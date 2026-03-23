@@ -14,12 +14,14 @@ _main() {
 		fatal "Neither argument can be empty";
 	fi
 	if [ ! -e $1 ]; then
-		fatal "Target must exist"
+		warn "Target doesnt exist, creating empty file"
+		mkdir -p `dirname $1`
+		touch $1
 	fi
 	mkdir -pv `dirname $2`
 	cp $1 $2
 	rm $1
-	ln -s $2 `realpath $1`
+	ln -s `realpath $2` $1
 	exit 0
 }
 
