@@ -13,8 +13,10 @@
 	boot.crashDump.enable = true; #pls prayge
 	
 # Various system configurations
-	networking.networkmanager.enable = true;
-	networking.wireless.iwd.enable = true;
+	networking.networkmanager = {
+		enable = true;
+		wifi.backend = "iwd";
+	};
 	time.timeZone = "Europe/Amsterdam";
 	i18n.defaultLocale = "en_US.UTF-8";
 	i18n.extraLocaleSettings = {
