@@ -70,7 +70,7 @@
 	fonts = {
 		enableDefaultPackages = true;
 		packages = with pkgs; [ 
-			nerdfonts 
+			nerd-fonts 
 		];
 		fontconfig = {
 			defaultFonts = {
