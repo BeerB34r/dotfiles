@@ -85,6 +85,7 @@
 		bat
 		cargo
 		openssl
+		btop
 		#hypr stuff
 		hyprlauncher
 		hyprpaper
