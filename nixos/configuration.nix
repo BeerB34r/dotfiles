@@ -31,7 +31,10 @@
 # DE config
 	services.displayManager.sddm.enable = true;
 	services.desktopManager.plasma6.enable = true;
-	services.dunst.enable = true;
+	services.dunst = {
+		enable = true;
+		enableWayland = true;
+	};
 	services.xserver.xkb = {
 		layout = "us";
 		variant = "";
@@ -64,9 +67,23 @@
 	system.stateVersion = "25.05";
 
 # packages
+	fonts = {
+		enableDefaultPackages = true;
+		packages = with pkgs; [ 
+			nerdfonts 
+		];
+		fontconfig = {
+			defaultFonts = {
+				serif = [ "Hasklug" ];
+				sansSerif = [ "Hasklug" ];
+				monospace = [ "Hasklug" ];
+			};
+		};
+	};
 	programs.zsh.enable = true;
 	programs.steam.enable = true;
 	programs.hyprland.enable = true;
+	programs.waybar.enable = true;
 	environment.systemPackages = with pkgs; [
 		# general stuff
 		neovim
