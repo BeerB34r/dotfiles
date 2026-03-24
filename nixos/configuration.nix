@@ -75,9 +75,9 @@
 		];
 		fontconfig = {
 			defaultFonts = {
-				serif = [ "Hasklug" ];
-				sansSerif = [ "Hasklug" ];
-				monospace = [ "Hasklug" ];
+				serif = [ "Hasklug Nerd Font" ];
+				sansSerif = [ "Hasklug Nerd Font" ];
+				monospace = [ "Hasklug Nerd Font" ];
 			};
 		};
 	};
