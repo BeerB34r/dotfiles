@@ -87,7 +87,7 @@
 		openssl
 		btop
 		wiremix
-		blutui
+		bluetui
 		#hypr stuff
 		hyprlauncher
 		hyprpaper
