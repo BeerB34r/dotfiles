@@ -86,6 +86,8 @@
 		cargo
 		openssl
 		btop
+		wiremix
+		blutui
 		#hypr stuff
 		hyprlauncher
 		hyprpaper
