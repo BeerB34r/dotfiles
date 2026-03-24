@@ -1,5 +1,5 @@
 return {
-	s("ocf header", f(function(args, snip)
+	s({trig = "ocf header", snippetType = "snippet", desc = "boilerplate for orthodox canonical form" }, f(function(args, snip)
 		local res, env = {}, snip.env
 		local guard = env.TM_FILENAME:upper():gsub("%.", "_")
 		local class = env.TM_FILENAME:gsub("^%l", string.upper):gsub("%..*$", "")
@@ -22,7 +22,7 @@ return {
 		nl("#endif // " .. guard)
 		return res
 	end)),
-	s("ocf body", f(function(args, snip)
+	s({trig = "ocf body", snippetType = "snippet", desc = "boilerplate for orthodox canonical form" }, {f(function(args, snip)
 		local res, env = {}, snip.env
 		local guard = env.TM_FILENAME:upper():gsub("%.", "_")
 		local class = env.TM_FILENAME:gsub("^%l", string.upper):gsub("%..*$", "")
@@ -54,5 +54,16 @@ return {
 		nl("	std::clog << \"default " .. class .. " destructor called\" << std::endl;")
 		nl("}")
 		return res
-	end))
+	end)}),
+	s({trig = "main", snippetType = "snippet", desc = "fubar" }, {
+		t({
+			'#include <iostream>',
+			'',
+			'auto	main([[maybe_unused]] int ac, [[maybe_unused]] char **av) -> int {',
+			'	std::cout << "Hello, World!\\n";',
+			'',
+			'	return 0;',
+			'}'
+		}),
+	})
 }
