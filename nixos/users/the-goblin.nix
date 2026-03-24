@@ -18,6 +18,7 @@
 			lazygit
 			gimp
 			qutebrowser
+			librewolf
 			ripgrep
 			yq
 			yazi
