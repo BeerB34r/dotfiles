@@ -12,6 +12,8 @@ _sourceExisting() {
 	fi
 }
 
+_sourceExisting "${HOME}/.path.sh"
+_sourceExisting "${HOME}/.cargo/env"
 _sourceExisting "${HOME}/.config/zsh/zsh.sh" warn
 _sourceExisting "${HOME}/.config/zsh/variable.sh" warn
 _sourceExisting "${HOME}/.config/zsh/aliase.sh" warn
@@ -19,4 +21,3 @@ _sourceExisting "${HOME}/.config/zsh/command.sh" warn
 _sourceExisting "${HOME}/.config/zsh/prompt.sh" warn
 _sourceExisting "${HOME}/.config/zsh/codam.sh"
 _sourceExisting "${HOME}/.path.sh"
-_sourceExisting "${HOME}/.cargo/env"

@@ -9,3 +9,4 @@ export PATH=/home/mde-beer/.capt:/home/mde-beer/.capt/root/usr/local/sbin:/home/
 # frank
 alias francinette=/home/mde-beer/francinette/tester.sh
 alias paco=/home/mde-beer/francinette/tester.sh
+alias qdirstat='echo "did you mean ncdu?"'
