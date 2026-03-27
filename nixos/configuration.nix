@@ -106,7 +106,9 @@
 		btop
 		wiremix
 		bluetui
+		entr
 		#hypr stuff
+		hyprtoolkit
 		hyprlauncher
 		hyprpaper
 		hyprshot

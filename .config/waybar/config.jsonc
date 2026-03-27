@@ -1,0 +1,28 @@
+{
+	"layer": "top",
+	"position": "top",
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"hyprland/window"
+	],
+	"modules-right": [
+		"pulseaudio",
+		"clock"
+	],
+
+// Module configs
+// // left
+	"hyprland/workspaces": {
+		"format": "{name} {icon}",
+		"format-icons": {
+			"active": "",
+			"default": ""
+		}
+	},
+	"clock": {
+		"format": "{:%a %d %H:%M}",
+		"tooltip-format": "<big>{:%Y %B} </big>\n<tt><small>{calendar}</small></tt>"
+	}
+}
