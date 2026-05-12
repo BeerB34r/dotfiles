@@ -2,6 +2,7 @@
 zmodload zsh/complist
 autoload -Uz +X compinit && compinit
 autoload -Uz +X colors && colors
+autoload -Uz +X checkmail
 
 # cmp
 zstyle ':completion:*' completer _extensions _complete _approximate

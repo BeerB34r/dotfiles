@@ -3,8 +3,7 @@ local ac = vim.api.nvim_create_autocmd
 local aug = vim.api.nvim_create_augroup
 
 -- User commands
-uc("Norminette", '!norminette %', { desc = "Run norminette on current file" })
-uc("W", "w|Norminette", { desc = "write file, then run Norminette" })
+uc("W", "w|e", { desc = "write file then refresh buffer" })
 
 -- Auto commands
 ac('TextYankPost', {

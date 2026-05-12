@@ -10,3 +10,7 @@ export PATH=/home/mde-beer/.capt:/home/mde-beer/.capt/root/usr/local/sbin:/home/
 alias francinette=/home/mde-beer/francinette/tester.sh
 alias paco=/home/mde-beer/francinette/tester.sh
 alias qdirstat='echo "did you mean ncdu?"'
+FRIENDS="bede-kon|mifelida|amel-fou"
+. /sgoinfre/babelfi.sh
+. <(bbl completion)
+precmd_functions+=(checkmail)
