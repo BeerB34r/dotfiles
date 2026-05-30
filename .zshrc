@@ -19,5 +19,5 @@ _sourceExisting "${HOME}/.config/zsh/variable.sh" warn
 _sourceExisting "${HOME}/.config/zsh/aliase.sh" warn
 _sourceExisting "${HOME}/.config/zsh/command.sh" warn
 _sourceExisting "${HOME}/.config/zsh/prompt.sh" warn
-_sourceExisting "${HOME}/.config/zsh/codam.sh"
+[ "`hostname`" = "jason" ] || _sourceExisting "${HOME}/.config/zsh/codam.sh"
 _sourceExisting "${HOME}/.path.sh"

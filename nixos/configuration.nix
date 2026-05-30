@@ -1,121 +1,128 @@
 { config, pkgs, ... }:
 
 {
-	imports = 
-	[
-		./users/the-goblin.nix
-		./users/garnaal2000.nix
-	];
+  imports = [
+    ./users/the-goblin.nix
+    ./users/garnaal2000.nix
+  ];
 
-# Bootloader
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
-	boot.crashDump.enable = true; #pls prayge
-	
-# Various system configurations
-	networking.networkmanager.enable = true;
-	time.timeZone = "Europe/Amsterdam";
-	i18n.defaultLocale = "en_US.UTF-8";
-	i18n.extraLocaleSettings = {
-		LC_ADDRESS = "nl_NL.UTF-8";
-		LC_IDENTIFICATION = "nl_NL.UTF-8";
-		LC_MEASUREMENT = "nl_NL.UTF-8";
-		LC_MONETARY = "nl_NL.UTF-8";
-		LC_NAME = "nl_NL.UTF-8";
-		LC_NUMERIC = "nl_NL.UTF-8";
-		LC_PAPER = "nl_NL.UTF-8";
-		LC_TELEPHONE = "nl_NL.UTF-8";
-		LC_TIME = "nl_NL.UTF-8";
-	};
+  # Bootloader
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.crashDump.enable = true; # pls prayge
 
-# DE config
-	services.displayManager.sddm.enable = true;
-	services.desktopManager.plasma6.enable = true;
-	services.dunst = {
-		enable = true;
-		enableWayland = true;
-	};
-	services.xserver.xkb = {
-		layout = "us";
-		variant = "";
-	};
-	services.pulseaudio.enable = false;
-	security.rtkit.enable = true;
-	services.pipewire = {
-		enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		pulse.enable = true;
-	};
-	hardware.bluetooth = {
-		enable = true;
-		powerOnBoot = true;
-		settings = {
-			General = {
-				Experimental = true; # battery charge on bt devices
-			};
-		};
-	};
+  # Various system configurations
+  networking.networkmanager.enable = true;
+  time.timeZone = "Europe/Amsterdam";
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "nl_NL.UTF-8";
+    LC_IDENTIFICATION = "nl_NL.UTF-8";
+    LC_MEASUREMENT = "nl_NL.UTF-8";
+    LC_MONETARY = "nl_NL.UTF-8";
+    LC_NAME = "nl_NL.UTF-8";
+    LC_NUMERIC = "nl_NL.UTF-8";
+    LC_PAPER = "nl_NL.UTF-8";
+    LC_TELEPHONE = "nl_NL.UTF-8";
+    LC_TIME = "nl_NL.UTF-8";
+  };
 
-# nix configs
+  # DE config
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.dunst = {
+    enable = true;
+    enableWayland = true;
+  };
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true; # battery charge on bt devices
+      };
+    };
+  };
+  hardware.keyboard.zsa.enable = true;
 
-	nixpkgs.config.allowUnfree = true;
-	nix.settings.experimental-features = [
-		"nix-command"
-		"flakes"
-	];
-	system.stateVersion = "25.05";
+  # nix configs
 
-# packages
-	fonts = {
-		enableDefaultPackages = true;
-		packages = with pkgs; [ 
-			nerd-fonts.hasklug
-			nerd-fonts.symbols-only
-		];
-		fontconfig = {
-			defaultFonts = {
-				serif = [ "Hasklug Nerd Font" ];
-				sansSerif = [ "Hasklug Nerd Font" ];
-				monospace = [ "Hasklug Nerd Font" ];
-			};
-		};
-	};
-	programs.zsh.enable = true;
-	programs.steam.enable = true;
-	programs.hyprland.enable = true;
-	programs.waybar.enable = true;
-	environment.systemPackages = with pkgs; [
-		# general stuff
-		neovim
-		ghostty
-		git
-		wget
-		unzip
-		unrar
-		python3
-		wine
-		vlc
-		mpv
-		paprefs
-		pavucontrol
-		tree
-		bat
-		cargo
-		openssl
-		btop
-		wiremix
-		bluetui
-		entr
-		#hypr stuff
-		hyprtoolkit
-		hyprlauncher
-		hyprpaper
-		hyprshot
-	];
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+  system.stateVersion = "25.05";
 
-# non-nix packages with runtime dependencies need this
-	programs.nix-ld.enable = true;
-	programs.nix-ld.libraries = with pkgs; [
-	];
+  # packages
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      nerd-fonts.hasklug
+      nerd-fonts.symbols-only
+    ];
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Hasklug Nerd Font" ];
+        sansSerif = [ "Hasklug Nerd Font" ];
+        monospace = [ "Hasklug Nerd Font" ];
+      };
+    };
+  };
+  programs.zsh.enable = true;
+  programs.steam.enable = true;
+  programs.hyprland.enable = true;
+  programs.waybar.enable = true;
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
+  environment.systemPackages = with pkgs; [
+    # general stuff
+    ghostty
+    git
+    wget
+    unzip
+    unrar
+    python3
+    wine
+    vlc
+    mpv
+    paprefs
+    pavucontrol
+    tree
+    bat
+    cargo
+    openssl
+    btop
+    wiremix
+    bluetui
+    entr
+    ncdu
+    keymapp
+    #hypr stuff
+    hyprtoolkit
+    hyprlauncher
+    hyprpaper
+    hyprshot
+  ];
+
+  # non-nix packages with runtime dependencies need this
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+  ];
 }

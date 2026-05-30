@@ -21,7 +21,3 @@ ac('LspAttach', {
 		end
 	end,
 })
-ac('FileType', {
-	pattern = { '<filetype>' },
-	callback = function() vim.treesitter.start() end,
-})
