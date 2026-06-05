@@ -8,6 +8,7 @@
 		"hyprland/window"
 	],
 	"modules-right": [
+		"battery",
 		"pulseaudio",
 		"clock"
 	],

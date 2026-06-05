@@ -1,0 +1,7 @@
+hl.on("hyprland.start", function()
+	hl.exec_cmd(StatusBar)
+	hl.exec_cmd(Wallpaper)
+	hl.exec_cmd(NotifDaemon)
+	hl.exec_cmd(Terminal, { workspace = 1 })
+	hl.exec_cmd("discord", { workspace = 2 })
+end)

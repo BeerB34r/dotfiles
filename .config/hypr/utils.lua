@@ -1,3 +1,6 @@
 Terminal = "ghostty"
 FileManager = Terminal .. " -e yazi"
 Menu = "hyprlauncher"
+StatusBar = "waybar"
+NotifDaemon = "dunst"
+Wallpaper = "hyprpaper"

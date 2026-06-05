@@ -30,6 +30,7 @@
       ripgrep
       yq
       yazi
+      bear
 
       # programming tooling
       # # general

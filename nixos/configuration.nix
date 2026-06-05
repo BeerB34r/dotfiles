@@ -11,6 +11,25 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.crashDump.enable = true; # pls prayge
 
+  # nvidia...
+  # TODO split up config.nix into per-host files
+  hardware.graphics = {
+    enable = true;
+  };
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = true;
+    nvidiaSettings = true;
+    prime = {
+      sync.enable = true;
+      nvidiaBusId = "PCI:01:00:0";
+      intelBusId = "PCI:00:02:0";
+    };
+  };
+
   # Various system configurations
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Amsterdam";
@@ -28,7 +47,9 @@
   };
 
   # DE config
-  services.displayManager.sddm.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+  };
   services.desktopManager.plasma6.enable = true;
   services.dunst = {
     enable = true;
@@ -114,6 +135,7 @@
     entr
     ncdu
     keymapp
+    lshw
     #hypr stuff
     hyprtoolkit
     hyprlauncher
