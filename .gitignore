@@ -1,1 +1,6 @@
 *lock*
+*cache*
+.config/yazi/*/
+.config/qutebrowser/theme.py
+.config/qutebrowser/quickmarks
+.config/qutebrowser/bookmarks/

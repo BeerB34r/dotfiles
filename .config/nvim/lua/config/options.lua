@@ -11,8 +11,8 @@ o.showmatch = true
 o.smartindent = true
 o.autoindent = true
 o.list = true
-o.listchars:append { tab = 'ᘳ-ᘰ', space = 'ᘯ', eol = 'ᘱ' }
-o.colorcolumn = '+1'
+o.listchars:append({ tab = "ᘳ-ᘰ", space = "ᘯ", eol = "ᘱ" })
+o.colorcolumn = "+1"
 o.wrap = false
 o.swapfile = false
 o.mouse = {}
@@ -23,10 +23,10 @@ o.signcolumn = "yes"
 o.foldenable = true
 o.foldmethod = "expr"
 o.foldexpr = "v:lua.vim.lsp.foldexpr()"
-o.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldclose:'
+o.fillchars = "eob: ,fold: ,foldopen:,foldsep: ,foldclose:"
 o.foldlevel = 99
 o.foldlevelstart = 99
-o.foldcolumn = '0'
+o.foldcolumn = "0"
 g.c_syntax_for_h = true
 g.mapleader = " "
 g.maplocalleader = "\\"
@@ -38,5 +38,6 @@ vim.filetype.add({
 		tpp = "cpp",
 		nasm = "asm",
 		mac = "asm",
+		h = "c",
 	},
 })

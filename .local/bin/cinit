@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+fatal() {
+	echo "[FATAL]" $@
+	exit 1
+}
+
+info() {
+	echo "[INFO]" $@
+}
+
+warn() {
+	echo "[WARN]" $@
+}
+
+_main() {
+	[ -z "$1" ] && fatal "Argument required"
+
+	local prefix="${HOME}/dotfiles/format/"
+
+	case "$1" in
+		"c"|"C"|"cpp"|"c++"|"CPP"|"C++")
+			cp ${prefix}.clang-format . -v
+			cp ${prefix}.clang-tidy . -v
+			;;
+		*)
+			fatal "Unsupported project language"
+			;;
+	esac
+	info "Initialised successfully"
+}
+
+_main $@

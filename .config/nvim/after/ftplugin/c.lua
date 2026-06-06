@@ -1,5 +1,5 @@
 local set = vim.opt_local
 
-set.shiftwidth = 4
-set.tabstop = 4
-set.commentstring = '/*%s*/'
+set.shiftwidth = 8
+set.tabstop = 8
+set.commentstring = "/*%s*/"

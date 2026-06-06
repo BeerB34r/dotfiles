@@ -49,6 +49,11 @@
   # DE config
   services.displayManager.ly = {
     enable = true;
+    settings = {
+      vi_mode = "true";
+      vi_default_mode = "normal";
+      animation = "matrix";
+    };
   };
   services.desktopManager.plasma6.enable = true;
   services.dunst = {
