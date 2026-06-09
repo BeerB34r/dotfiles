@@ -23,6 +23,11 @@ return {
 			lua = { "stylua" },
 			haskell = { "fourmolu" },
 			cabal = { "cabal_fmt" },
+			python = {
+				"ruff_fix",
+				"ruff_format",
+				"ruff_organize_imports",
+			},
 		},
 		-- Set default options
 		default_format_opts = {

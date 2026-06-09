@@ -27,6 +27,8 @@ return {
 						hls = {}, -- haskell
 						asm_lsp = {}, -- asm
 						rust_analyzer = {}, -- rust
+						ruff = {}, -- python
+						ty = {}, -- python
 					},
 				},
 				config = function(_, opts)
