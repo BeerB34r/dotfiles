@@ -2,10 +2,12 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
-			{ "williamboman/mason.nvim", opts = {}, },
-			{ "neovim/nvim-lspconfig",
+			{ "williamboman/mason.nvim", opts = {} },
+			{
+				"neovim/nvim-lspconfig",
 				dependencies = {
-					{ "folke/lazydev.nvim",
+					{
+						"folke/lazydev.nvim",
 						ft = "lua",
 						opts = {
 							library = {
@@ -13,7 +15,7 @@ return {
 							},
 						},
 					},
-					{ 'saghen/blink.cmp' },
+					{ "saghen/blink.cmp" },
 				},
 				opts = {
 					servers = {
@@ -24,18 +26,19 @@ return {
 						norm_ls = {}, -- 42 norminette
 						hls = {}, -- haskell
 						asm_lsp = {}, -- asm
+						rust_analyzer = {}, -- rust
 					},
 				},
 				config = function(_, opts)
 					for server, config in pairs(opts.servers) do
-						config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+						config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 						vim.lsp.enable(server)
 					end
 				end,
-			}
+			},
 		},
 		opts = {
-			ensure_installed = {}
+			ensure_installed = {},
 		},
 	},
 }
