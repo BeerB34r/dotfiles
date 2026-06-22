@@ -1,8 +1,8 @@
 local o = vim.opt
 local g = vim.g
 
-o.shiftwidth = 4
-o.tabstop = 4
+o.shiftwidth = 8
+o.tabstop = 8
 o.number = true
 o.relativenumber = true
 o.textwidth = 80

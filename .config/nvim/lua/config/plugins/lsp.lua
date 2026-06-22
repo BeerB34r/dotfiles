@@ -36,6 +36,13 @@ return {
 						config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 						vim.lsp.enable(server)
 					end
+					vim.lsp.config("rust_analyzer", {
+						settings = {
+							["rust-analyzer"] = {
+								check = { command = "clippy" },
+							},
+						},
+					})
 				end,
 			},
 		},
