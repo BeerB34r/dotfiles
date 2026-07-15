@@ -39,5 +39,6 @@ vim.filetype.add({
 		nasm = "asm",
 		mac = "asm",
 		h = "c",
+		rpy = "python",
 	},
 })

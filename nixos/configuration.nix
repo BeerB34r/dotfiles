@@ -110,6 +110,7 @@
   programs.zsh.enable = true;
   programs.steam.enable = true;
   programs.hyprland.enable = true;
+  services.hypridle.enable = true;
   programs.waybar.enable = true;
   programs.neovim = {
     enable = true;
@@ -146,6 +147,7 @@
     hyprlauncher
     hyprpaper
     hyprshot
+    hyprlock
   ];
 
   # non-nix packages with runtime dependencies need this
