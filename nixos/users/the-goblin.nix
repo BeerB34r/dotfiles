@@ -59,7 +59,6 @@
 
       # leisure
       prismlauncher
-      rare
       ani-cli
       cockatrice
       spotify-player
