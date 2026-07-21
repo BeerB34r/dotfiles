@@ -41,3 +41,4 @@ alias rcedit='for i in ~/.zshrc ~/.bashrc ~/.config/fish/config.fish ; do nvim $
 alias vim='nvim'
 alias lg='lazygit'
 alias ldo='lazydocker'
+alias grep='grep --color=always'

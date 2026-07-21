@@ -8,6 +8,11 @@ use = "yazi-rs/plugins:zoom"
 rev = "1962818"
 hash = "fa268cb59989a87780605fdcfb8d99a9"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "bb758e2"
+hash = "5b1c276b75cae91cbbdbe7863f39a540"
+
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
 rev = "8e6296f"
