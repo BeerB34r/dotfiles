@@ -148,6 +148,7 @@
     hyprpaper
     hyprshot
     hyprlock
+    brightnessctl
   ];
 
   # non-nix packages with runtime dependencies need this
