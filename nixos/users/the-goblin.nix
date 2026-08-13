@@ -31,6 +31,7 @@
       yq
       yazi
       bear
+      eza
 
       # programming tooling
       # # general
