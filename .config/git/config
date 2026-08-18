@@ -6,6 +6,7 @@
 	whitespace = trailing-space,space-before-tab,indent-with-non-tab,tabwidth=4
 	preloadindex = true
 	editor = nvim
+	hooksPath = ~/.config/git/hooks
 [color]
 	ui = auto
 [init]
