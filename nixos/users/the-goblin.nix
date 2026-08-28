@@ -64,6 +64,11 @@
       cockatrice
       spotify-player
       obs-studio
+      # LARP LARP LARP LARP
+      fetch
+      fastfetch
+      cmatrix
+      tty-clock
     ];
   };
 }

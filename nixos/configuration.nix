@@ -31,6 +31,10 @@
   };
 
   # Various system configurations
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 16262 ];
+  };
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Amsterdam";
   i18n.defaultLocale = "en_US.UTF-8";
