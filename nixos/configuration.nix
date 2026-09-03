@@ -7,7 +7,10 @@
   ];
 
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 10;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
   boot.crashDump.enable = true; # pls prayge
 
@@ -153,6 +156,12 @@
     hyprlock
     brightnessctl
   ];
+
+  nix.gc = {
+    automatic = true;
+    randomizedDelaySec = "14m";
+    options = "--delete-older-than 10d";
+  };
 
   # non-nix packages with runtime dependencies need this
   programs.nix-ld.enable = true;
