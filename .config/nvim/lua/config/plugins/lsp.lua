@@ -29,7 +29,8 @@ return {
 						rust_analyzer = {}, -- rust
 						ruff = {}, -- python
 						ty = {}, -- python
-						eslint = {},
+						eslint = {}, -- js/ts
+						tinymist = {}, -- typst
 					},
 				},
 				config = function(_, opts)
