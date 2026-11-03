@@ -27,4 +27,5 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 #. "$HOME/.cargo/env"
 ~/.startup.sh
+rm -f /sgoinfre/babelfish/present/$(hostname -s)
 whoami >/sgoinfre/babelfish/present/$(hostname -s)
