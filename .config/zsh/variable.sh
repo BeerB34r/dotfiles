@@ -14,3 +14,4 @@ if which bat 2>/dev/null >/dev/null; then
 	export PAGER='bat -l man -p --paging=always --strip-ansi always'
 fi
 export MANPAGER="$PAGER"
+export NOTES_DIR="${HOME}/notes"
