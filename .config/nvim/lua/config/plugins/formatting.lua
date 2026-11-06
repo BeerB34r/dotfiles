@@ -24,6 +24,7 @@ return {
 				lua = { "stylua" },
 				haskell = { "fourmolu" },
 				cabal = { "cabal_fmt" },
+				nix = { "alejandra" },
 				python = {
 					"ruff_fix",
 					"ruff_format",

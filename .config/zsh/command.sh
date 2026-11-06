@@ -94,3 +94,7 @@ y() {
 hoo() {
 	hoogle search -i $@ | bat
 }
+_man() {
+	man $@ || $1 --help | sh -c "$PAGER"
+}
+alias man="_man"

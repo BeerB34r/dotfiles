@@ -4,5 +4,5 @@ background-opacity = 0.90
 background-blur-radius = 20
 window-decoration = false
 font-size = 10.5
-class = "ghos.tty"
 custom-shader = ~/.config/ghostty/shaders/cursor_blaze.glsl
+quit-after-last-window-closed = false

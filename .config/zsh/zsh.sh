@@ -1,8 +1,4 @@
 #!/usr/bin/env zsh
-zmodload zsh/complist
-autoload -Uz +X compinit && compinit
-autoload -Uz +X colors && colors
-autoload -Uz +X checkmail
 
 # cmp
 zstyle ':completion:*' completer _extensions _complete _approximate
@@ -37,10 +33,16 @@ SAVEHIST=1000000
 HISTFILE="${HOME}/.cache/zsh_history" # to cache you go!
 HISTCONTROL=ignoreboth # repeat commands get ignored + ignore commands prefixed with space
 
-# fzf
-if which fzf 2>/dev/null >/dev/null; then
-	source <(fzf --zsh) # fzf history widget
-fi
+which fzf 2>/dev/null >/dev/null && source <(fzf --zsh) # fzf history widget
+
+which gh 2>/dev/null >/dev/null && source <(gh completion -s zsh) # gh shell completion
+which npm 2>/dev/null >/dev/null && source <(npm completion) # npm shell completion
+local nix_completions_path="$HOME/tools/external/nix-zsh-completions"
+local nix_completions_plugin="${nix_completions_path}/nix-zsh-completions.plugin.zsh"
+which nix 2>/dev/null >/dev/null &&
+	[ -e ${nix_completions_plugin} ] &&
+	source ${nix_completions_plugin} &&
+	fpath=(${nix_completions_path} $fpath)
 
 # keeb
 
@@ -52,3 +54,8 @@ setopt vi
 # bindkey "^J" history-search-forward
 # bindkey "^K" history-search-backward
 # bindkey "^R" fzf-history-widget
+
+zmodload zsh/complist
+autoload -Uz +X compinit && compinit
+autoload -Uz +X colors && colors
+autoload -Uz +X checkmail

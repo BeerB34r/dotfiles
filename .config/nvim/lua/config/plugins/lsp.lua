@@ -30,6 +30,7 @@ return {
 						ruff = {}, -- python
 						ty = {}, -- python
 						eslint = {}, -- js/ts
+						ts_ls = {},
 						tinymist = {}, -- typst
 					},
 				},

@@ -26,5 +26,4 @@ if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 #. "$HOME/.cargo/env"
-~/.startup.sh
-whoami >/sgoinfre/babelfish/present/$(hostname -s)
+#~/.startup.sh
