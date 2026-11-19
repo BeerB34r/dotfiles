@@ -44,13 +44,21 @@ return {
 					"prettier",
 					stop_after_first = true,
 				},
+				c = {
+					"clang_format",
+					lsp_format = "fallback",
+				},
+				cpp = {
+					"clang_format",
+					lsp_format = "fallback",
+				},
 			},
 			-- Set default options
 			default_format_opts = {
 				lsp_format = "fallback",
 			},
 			-- Set up format-on-save
-			format_on_save = { timeout_ms = 500 },
+			-- format_on_save = { timeout_ms = 500 },
 			-- Customize formatters
 			formatters = {
 				shfmt = {

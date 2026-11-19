@@ -10,7 +10,11 @@ ac("TextYankPost", {
 	desc = "Highlight when yanking text",
 	group = aug("highlight-yank", { clear = true }),
 	callback = function()
-		vim.hl.hl_op()
+		if vim.hl.hl_op then
+			vim.hl.hl_op()
+		else
+			vim.highlight.on_yank()
+		end
 	end,
 })
 ac("LspAttach", {
