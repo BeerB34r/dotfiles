@@ -1,0 +1,25 @@
+return {
+	s({ trig = "main", snippetType = "snippet", desc = "create a standard main" }, {
+		t({
+			"main() {",
+			'	local csi="\033["',
+			'	local reset="${csi}0m"',
+			"	local -f fatal, warn, info,",
+			"	fatal() {",
+			'		printf "${csi}31;1m[FATAL]${reset} %s\n" "$@" >&2',
+			"		exit 1",
+			"	}",
+			"",
+			"	warn() {",
+			'		printf "${csi}31;1m[WARN]${reset} %s\n" "$@" >&2',
+			"	}",
+			"",
+			"	info() {",
+			'		printf "${csi}1m[INFO]${reset} %s\n" "$@"',
+			"	}",
+			"",
+			'	info "Hello, World!"',
+			"}",
+		}),
+	}),
+}
