@@ -2,7 +2,7 @@ return {
 	s({ trig = "main", snippetType = "snippet", desc = "create a standard main" }, {
 		t({
 			"main() {",
-			'	local csi="\033["',
+			'	local csi="\\033["',
 			'	local reset="${csi}0m"',
 			"	local -f fatal, warn, info,",
 			"	fatal() {",
